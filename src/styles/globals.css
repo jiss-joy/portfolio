@@ -22,4 +22,7 @@ html {
   .h4 {
     @apply text-lg xl:text-xl leading-[1.1] font-semibold;
   }
+  .h5 {
+    @apply text-base xl:text-lg leading-[1.1] font-semibold;
+  }
 }

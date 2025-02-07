@@ -5,6 +5,7 @@ import Skills from "@/components/skills";
 import SNSButtons from "@/components/sns-buttons";
 import Stats from "@/components/stats";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { FiDownload } from "react-icons/fi";
 
 export default function Home() {
@@ -27,6 +28,9 @@ export default function Home() {
             </p>
             {/* Resume and SNS */}
             <div className="flex flex-col lg:flex-row items-center gap-8">
+              <Link download href="./public/resume/resume.pdf">
+                Download
+              </Link>
               <Button
                 className="uppercase flex items-center gap-2 "
                 variant="outline"

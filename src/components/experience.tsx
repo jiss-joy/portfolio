@@ -26,6 +26,7 @@ const Experience = () => {
   return (
     <section>
       <h3 className="h3">Experience</h3>
+      <p>My career journey until now.</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 space-y-2 space-x-2">
         {experience.map((exp) => (
           <div
