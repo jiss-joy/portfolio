@@ -18,7 +18,7 @@ const RolesTypingText = () => {
       ]}
       wrapper="strong"
       speed={TYPE_SPEED}
-      className="inline-block text-lg lg:text-2xl"
+      className="inline-block text-lg lg:text-2xl font-code"
       repeat={Infinity}
     />
   );

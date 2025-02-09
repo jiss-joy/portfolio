@@ -15,11 +15,13 @@ export default {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-dm-mono)",
+      primary: "var(--font-nunito)",
+      code: "var(--font-dm-mono)",
     },
     extend: {
       colors: {
         primary: "#ED6A5A",
+        secondary: "#202C39",
         // primary: "#250902",
         // primary: "#1C0221",
         // primary: "#1E1B18",

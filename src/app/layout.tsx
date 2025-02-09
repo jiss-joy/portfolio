@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import { dmMono } from "@/styles/fonts";
+import { nunito } from "@/styles/fonts";
 import Header from "@/components/header";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmMono.variable} ${dmMono.variable} antialiased`}>
+      <body className={`${nunito.variable} ${nunito.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system">
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
