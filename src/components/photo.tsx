@@ -17,22 +17,47 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="180"
-            // style={{ skewX: "30deg" }}
             stroke="#00ff99"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={{ strokeDasharray: "24 10 0 0" }}
             animate={{
-              strokeDasharray: ["15 12025 25", "16 25 92 72", "4 250 22 22"],
-              rotate: [180, 60],
+              rotate: [180, 90],
+              skewX: ["20deg"],
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
+              velocity: 40,
+              repeatDelay: 0,
               repeatType: "reverse",
+              ease: "linear",
             }}
           />
+          <motion.circle
+            cx="253"
+            cy="253"
+            r="170"
+            stroke="#00ff99"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ strokeDasharray: "24 18 0 0" }}
+            animate={{
+              rotate: [180, 60],
+              skewX: ["25deg"],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              velocity: 0.5,
+              repeatDelay: 0,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+          />
+
           <div>Photo</div>
         </motion.svg>
       </motion.div>

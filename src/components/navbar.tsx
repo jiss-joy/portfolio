@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { TbMenu4 } from "react-icons/tb";
+import ThemeButton from "./theme-button";
 
 type LinkType = {
   path: string;
@@ -19,12 +20,16 @@ const Navbar = () => {
       label: "Home",
     },
     {
-      path: "#about",
-      label: "About",
+      path: "/#about",
+      label: "About Me",
     },
     {
-      path: "/projects",
+      path: "/#projects",
       label: "Projects",
+    },
+    {
+      path: "/#contact",
+      label: "Contact",
     },
   ];
 
@@ -47,6 +52,7 @@ const Navbar = () => {
         <Link href="/contact">
           <Button className="bg-accent">Contact Me</Button>
         </Link>
+        <ThemeButton />
       </div>
       {/* Mobile Nav */}
       <div className="lg:hidden">
@@ -67,6 +73,7 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href={link.path}
+                  scroll={false}
                   className={`${
                     link.path == pathname && "text-accent"
                   } capitalize font-medium hover:text-accent transition-all`}

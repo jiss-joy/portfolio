@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 import { dmMono } from "@/styles/fonts";
 import Header from "@/components/header";
+import { ThemeProvider } from "@/lib/providers/theme-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmMono.variable} ${dmMono.variable} antialiased`}>
-        <Header />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

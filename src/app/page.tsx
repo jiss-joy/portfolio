@@ -59,6 +59,8 @@ export default function Home() {
           <Education />
           <div>Testimonials</div>
         </div>
+        {/* Projects */}
+        {/* Contact */}
         {/* <div>Footer</div> */}
       </div>
     </section>
