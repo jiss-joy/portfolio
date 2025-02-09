@@ -1,15 +1,13 @@
 import Skills from '@/components/skills';
 
 import SNSButtons from '@/components/sns-buttons';
-import { Button } from '@/components/ui/button';
-import { FiDownload } from 'react-icons/fi';
-
 import RolesTypingText from '@/components/roles-typing-text';
 import Photo from '@/components/photo';
 import Stats from '@/components/stats';
 import ExperienceEducationTimeline from '@/components/experience-education-timeline';
 import Projects from '@/components/projects';
 import Testimonials from '@/components/testimonials';
+import DownloadCVButton from '@/components/download-cv-button';
 
 export default function Home() {
   return (
@@ -30,10 +28,7 @@ export default function Home() {
             </p>
             {/* Resume and SNS */}
             <div className='flex flex-col items-center gap-8 lg:flex-row'>
-              <Button className='flex items-center gap-2 uppercase '>
-                <span className='font-medium'>Download Resume</span>
-                <FiDownload className='text-xl' />
-              </Button>
+              <DownloadCVButton />
               <div className='mb-8 lg:mb-0'>
                 <SNSButtons />
               </div>
