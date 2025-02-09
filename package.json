@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack -p 8055",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "analyze": "run-p lint typecheck"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
@@ -27,14 +29,23 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@eslint/js": "9.1.1",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@typescript-eslint/eslint-plugin": "7.7.1",
+    "@typescript-eslint/parser": "7.7.1",
     "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "9.1.0",
+    "eslint": "8.57.0",
     "postcss": "^8",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "0.5.14",
+    "eslint-plugin-unicorn": "52.0.0",
+    "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "7.7.1"
   }
 }
