@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-type HeartProps = {
+type RobotProps = {
   cursor: { cx: number; cy: number };
   cardRef: React.RefObject<HTMLElement | null>;
   mouseOnCard: boolean;
 };
 
-const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
+const Robot = ({ cursor, cardRef, mouseOnCard }: RobotProps) => {
   const [gradientCenter, setGradientCenter] = useState({ cx: '50%', cy: '50%' });
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
       viewBox='0 0 28 28'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className='lucide lucide-heart-pulse h-36 w-36 transition-all duration-100'
+      className='lucide lucide-bot h-36 w-36 transition-all duration-100'
     >
       <defs>
         <radialGradient
@@ -46,15 +46,39 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
       <path
         className='fill-none'
         stroke='url(#primaryGradient)'
-        d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'
+        d='M12 8V4H8'
+      />
+      <rect
+        width='16'
+        height='12'
+        x='4'
+        y='8'
+        rx='2'
+        stroke='url(#primaryGradient)'
+        className='fill-none'
       />
       <path
         className='fill-transparent'
         stroke='url(#primaryGradient)'
-        d='M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27'
+        d='M2 14h2'
+      />
+      <path
+        className='fill-transparent'
+        stroke='url(#primaryGradient)'
+        d='M20 14h2'
+      />
+      <path
+        className='fill-transparent'
+        stroke='url(#primaryGradient)'
+        d='M15 13v2'
+      />
+      <path
+        className='fill-transparent'
+        stroke='url(#primaryGradient)'
+        d='M9 13v2'
       />
     </svg>
   );
 };
 
-export default Heart;
+export default Robot;

@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
-type HeartProps = {
+type CalendarProps = {
   cursor: { cx: number; cy: number };
   cardRef: React.RefObject<HTMLElement | null>;
   mouseOnCard: boolean;
 };
 
-const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
+const Calendar = ({ cursor, cardRef, mouseOnCard }: CalendarProps) => {
   const [gradientCenter, setGradientCenter] = useState({ cx: '50%', cy: '50%' });
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 28 28'
+      viewBox='0 0 24 24'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className='lucide lucide-heart-pulse h-36 w-36 transition-all duration-100'
+      className='h-36 w-36 transition-all duration-100'
     >
       <defs>
         <radialGradient
@@ -46,15 +46,10 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
       <path
         className='fill-none'
         stroke='url(#primaryGradient)'
-        d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'
-      />
-      <path
-        className='fill-transparent'
-        stroke='url(#primaryGradient)'
-        d='M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27'
+        d='M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5'
       />
     </svg>
   );
 };
 
-export default Heart;
+export default Calendar;
