@@ -6,8 +6,8 @@ import Photo from '@/components/photo';
 import Stats from '@/components/stats';
 import ExperienceEducationTimeline from '@/components/experience-education-timeline';
 import Projects from '@/components/projects';
-import Testimonials from '@/components/testimonials';
 import DownloadCVButton from '@/components/download-cv-button';
+import Contact from '@/components/contact';
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
         {/* About */}
         <div
           id='about'
-          className='w-full items-center justify-center space-y-8'
+          className='w-full items-center justify-center'
         >
           <h3 className='h3'>About Me</h3>
           <Skills />
@@ -59,22 +59,13 @@ export default function Home() {
           <Projects />
         </div>
         <div className='mx-4 my-4 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
-        {/* <div>Testimonials</div> */}
-        <div
-          id='testimonials'
-          className='space-y-8'
-        >
-          <h3 className='h3'>Testimonials</h3>
-          <Testimonials />
-        </div>
-        <div className='mx-4 my-4 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
         {/* Contact */}
         <div
-          id='testimonials'
+          id='contact'
           className='space-y-8'
         >
           <h3 className='h3'>Contact</h3>
-          <Testimonials />
+          <Contact />
         </div>
       </div>
     </section>
