@@ -14,7 +14,7 @@ import Testimonials from '@/components/testimonials';
 export default function Home() {
   return (
     <section className='h-full'>
-      <div className='container mx-auto h-full items-center justify-center'>
+      <div className='container h-full items-center justify-center px-4 lg:mx-auto lg:px-0'>
         <div className='flex flex-col items-center justify-center lg:flex-row lg:pb-8 lg:pt-8'>
           <div className='lg:hidden'>
             <Photo />

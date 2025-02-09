@@ -33,10 +33,10 @@ const BenriYoyakuProjectCard = ({ cardRef }: BenriYoyakuProjectCardProps) => {
       onMouseLeave={mouseLeaveHandler}
     >
       <CardHeader>
-        <CardTitle className='text-lg text-white'>便利予約 (Benri Yoyaku)</CardTitle>
+        <CardTitle className='text-center text-lg text-white'>便利予約 (Benri Yoyaku)</CardTitle>
       </CardHeader>
-      <CardContent className='flex flex-row justify-between'>
-        <div className='max-w-[60%] leading-snug text-white'>{desc}</div>
+      <CardContent className='flex flex-col items-center justify-center gap-2 lg:flex-row lg:justify-between'>
+        <div className='text-center leading-snug text-white lg:max-w-[60%]'>{desc}</div>
         <div className='flex w-2/5 flex-col place-items-center'>
           <Calendar
             cursor={cursor}

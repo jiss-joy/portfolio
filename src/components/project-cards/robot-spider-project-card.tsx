@@ -25,10 +25,10 @@ const RobotSpiderProjectCard = ({ cardRef }: RobotSpiderProjectCardProps) => {
       onMouseLeave={() => setMouseOnCard(false)}
     >
       <CardHeader>
-        <CardTitle className='text-lg text-white'>Bio-mimicking Spider Robot</CardTitle>
+        <CardTitle className='text-center text-lg text-white'>Bio-mimicking Spider Robot</CardTitle>
       </CardHeader>
-      <CardContent className='flex flex-row justify-between'>
-        <div className='max-w-[60%] leading-snug text-white'>{desc}</div>
+      <CardContent className='flex flex-col items-center justify-center gap-2 lg:flex-row lg:justify-between'>
+        <div className='text-center leading-snug text-white lg:max-w-[60%]'>{desc}</div>
         <div className='flex w-2/5 flex-col place-items-center'>
           <Robot
             cursor={cursor}

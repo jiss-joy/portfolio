@@ -71,7 +71,7 @@ const Skills = () => {
         <FaCode />
         <h5 className='h4'>Skills</h5>
       </div>
-      <div className='mt-4 flex flex-wrap items-center justify-center gap-2'>
+      <div className='mt-4 flex flex-wrap items-end justify-center gap-2 lg:justify-start'>
         {skills.map((skill, index) => (
           <div
             key={index}
