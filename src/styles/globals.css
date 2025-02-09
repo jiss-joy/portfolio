@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+@layer base {
+  body {
+    @apply font-primary bg-background dark:bg-background-dark leading-loose;
+  }
+  .h1 {
+    @apply text-5xl xl:text-7xl leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-4xl xl:text-5xl leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-2xl xl:text-3xl leading-[1.1] font-semibold;
+  }
+  .h4 {
+    @apply text-lg xl:text-xl leading-[1.1] font-semibold;
+  }
+  .h5 {
+    @apply text-base xl:text-lg leading-[1.1] font-semibold;
+  }
+  .title {
+    @apply text-sm xl:text-base leading-[1.1] font-semibold;
+  }
+}
