@@ -28,6 +28,7 @@ const Navbar = () => {
 
   const pathname = usePathname();
   const point = `/#${pathname}`;
+  
   return (
     <div>
       {/* Desktop Nav */}
