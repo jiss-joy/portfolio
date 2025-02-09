@@ -21,7 +21,6 @@
       }
     ],
     "@typescript-eslint/no-unused-vars": "error",
-    "react/jsx-no-literals": "off", // TODO: change this back to "error" after all the literals are replaced.
     "newline-before-return": "error"
   }
 }

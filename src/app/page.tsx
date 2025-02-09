@@ -7,7 +7,6 @@ import { FiDownload } from "react-icons/fi";
 import RolesTypingText from "@/components/roles-typing-text";
 import Photo from "@/components/photo";
 import Stats from "@/components/stats";
-import ExperienceEducation from "@/components/experience-education-timeline";
 import ExperienceEducationTimeline from "@/components/experience-education-timeline";
 
 export default function Home() {
