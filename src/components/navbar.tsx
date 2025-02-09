@@ -44,7 +44,7 @@ const Navbar = () => {
           </Link>
         ))}
         <Link href="/contact">
-          <Button className="bg-accent">Contact Me</Button>
+          <Button>Contact Me</Button>
         </Link>
         <ThemeButton classname="hidden lg:flex" />
       </div>
