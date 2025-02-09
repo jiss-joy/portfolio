@@ -24,10 +24,6 @@ const Navbar = () => {
       path: '/#projects',
       label: 'Projects',
     },
-    {
-      path: '/#testimonials',
-      label: 'Testimonials',
-    },
   ];
 
   const pathname = usePathname();
@@ -48,9 +44,9 @@ const Navbar = () => {
             {link.label}
           </Link>
         ))}
-        <Link href='/contact'>
-          <Button>Contact Me</Button>
-        </Link>
+        <Button>
+          <Link href='#contact'>Contact Me</Link>
+        </Button>
         <ThemeButton classname='hidden lg:flex' />
       </div>
       {/* Mobile Nav */}
@@ -82,6 +78,9 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              <Button>
+                <Link href='#contact'>Contact Me</Link>
+              </Button>
             </nav>
           </SheetContent>
         </Sheet>

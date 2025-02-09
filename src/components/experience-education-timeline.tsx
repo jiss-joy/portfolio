@@ -66,10 +66,10 @@ const educationData = [
 
 const ExperienceEducationTimeline = () => {
   return (
-    <section>
+    <section className='mt-16'>
       <div className='flex w-fit flex-row items-center justify-center gap-2 rounded-full bg-primary px-4 py-1'>
         <LiaToolsSolid />
-        <h5 className='h4'>Experience and Academic qualifications</h5>
+        <h4 className='h4'>Experience and Academic qualifications</h4>
       </div>
       <Timeline data={educationData} />
     </section>
