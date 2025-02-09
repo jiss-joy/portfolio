@@ -33,10 +33,8 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
         <radialGradient
           id='primaryGradient'
           gradientUnits='userSpaceOnUse'
-          // cx={gradientCenter.cx}
-          // cy={gradientCenter.cy}
-          cx={'30%'}
-          cy={'90%'}
+          cx={gradientCenter.cx}
+          cy={gradientCenter.cy}
           r='35%'
         >
           {mouseOnCard && <stop stopColor='#ED6A5A' />}
