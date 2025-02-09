@@ -7,8 +7,8 @@ import { FiDownload } from "react-icons/fi";
 import RolesTypingText from "@/components/roles-typing-text";
 import Photo from "@/components/photo";
 import Stats from "@/components/stats";
-import ExperienceEducation from "@/components/experience-education-timeline";
 import ExperienceEducationTimeline from "@/components/experience-education-timeline";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -51,7 +51,12 @@ export default function Home() {
           <Skills />
           <ExperienceEducationTimeline />
         </div>
+        <div className="w-full bg-slate-900/10 dark:bg-white/10 h-[1px] rounded-full mx-4 my-4 lg:my-14" />
         {/* Projects */}
+        <div id="projects" className="space-y-8">
+          <h3 className="h3">Projects</h3>
+          <Projects />
+        </div>
         {/* <div>Testimonials</div> */}
         {/* Contact */}
       </div>
