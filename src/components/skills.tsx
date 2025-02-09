@@ -12,61 +12,51 @@ import { FaCode } from 'react-icons/fa';
 
 type SkillsType = {
   title: string;
-  description: string;
   icon: string;
 };
 
 const skills: SkillsType[] = [
   {
     title: 'Typescript',
-    description: 'Programming Language',
     icon: typescript as string,
   },
   {
     title: 'Ruby',
-    description: 'Programming Language',
     icon: ruby as string,
   },
   {
     title: 'React',
-    description: 'JavaScript Library',
     icon: react as string,
   },
   {
     title: 'Next.js',
-    description: 'React Framework',
     icon: nextjs as string,
   },
   {
     title: 'Ruby on Rails',
-    description: 'Programming Language',
     icon: rails as string,
   },
   {
     title: 'Figma',
-    description: 'Programming Language',
     icon: figma as string,
   },
   {
     title: 'Tailwind CSS',
-    description: 'Programming Language',
     icon: tailwind as string,
   },
   {
     title: 'Redux',
-    description: 'Web Server',
     icon: redux as string,
   },
   {
     title: 'AWS',
-    description: 'Programming Language',
     icon: aws as string,
   },
 ];
 
 const Skills = () => {
   return (
-    <section className='leading-snug'>
+    <section className='mt-8 leading-snug'>
       <div className='flex w-fit flex-row items-center justify-center gap-2 rounded-full bg-primary px-4 py-1'>
         <FaCode />
         <h5 className='h4'>Skills</h5>

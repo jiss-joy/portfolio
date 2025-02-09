@@ -1,27 +1,28 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
-  darkMode: ["class"],
+  darkMode: ['class'],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "960px",
-      xl: "1200px",
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
     },
     fontFamily: {
-      primary: "var(--font-nunito)",
-      code: "var(--font-dm-mono)",
+      primary: 'var(--font-nunito)',
+      code: 'var(--font-dm-mono)',
+      logo: 'var(--font-concert-one)',
     },
     extend: {
       colors: {
-        primary: "#ED6A5A",
-        secondary: "#202C39",
+        primary: '#ED6A5A',
+        secondary: '#202C39',
         // primary: "#250902",
         // primary: "#1C0221",
         // primary: "#1E1B18",
@@ -30,20 +31,20 @@ export default {
         // primary: "#22181C",
         accent: {
           // DEFAULT: "#D74E09",
-          DEFAULT: "#ED6A5A",
+          DEFAULT: '#ED6A5A',
           // DEFAULT: "#E15554",
           // DEFAULT: "#F25918",
           // DEFAULT: "#FF5C00",
           // DEFAULT: "#D81E5B",
           // DEFAULT: "#DB2B39",
-          hover: "#D74E09",
+          hover: '#D74E09',
         },
         background: {
-          DEFAULT: "#D1DEDE",
-          dark: "#1C0221",
+          DEFAULT: '#D1DEDE',
+          dark: '#1C0221',
         },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
