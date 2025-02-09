@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const CardSpotlight = ({
   children,
   radius = 350,
-  color = "#262626",
+  color = "#230606",
   className,
   ...props
 }: {
@@ -56,17 +56,17 @@ export const CardSpotlight = ({
           `,
         }}
       >
-        {isHovering && (
+        {/* {isHovering && (
           <CanvasRevealEffect
-            animationSpeed={5}
+            animationSpeed={7}
             containerClassName="bg-transparent absolute inset-0 pointer-events-none"
             colors={[
               [59, 130, 246],
               [139, 92, 246],
             ]}
-            dotSize={3}
+            dotSize={1}
           />
-        )}
+        )} */}
       </motion.div>
       {children}
     </div>
