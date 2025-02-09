@@ -4,8 +4,13 @@ import { useTheme } from "next-themes";
 import React from "react";
 import { Button } from "./ui/button";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { cn } from "@/lib/utils";
 
-const ThemeButton = () => {
+type ThemeButtonProps = {
+  classname?: string;
+};
+
+const ThemeButton = ({ classname }: ThemeButtonProps) => {
   const { theme, setTheme } = useTheme();
 
   function onClick() {
@@ -17,7 +22,7 @@ const ThemeButton = () => {
   }
 
   return (
-    <Button size="icon" onClick={onClick}>
+    <Button size="icon" onClick={onClick} variant='ghost' className={cn(classname)}>
       {theme == "dark" ? (
         <FiSun className="text-[32px]" />
       ) : (

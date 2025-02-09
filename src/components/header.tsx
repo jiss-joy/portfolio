@@ -1,15 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import Navbar from "./navbar";
+import Logo from "./logo";
 
 const Header = () => {
   return (
-    <header className="py-8 container mx-auto">
+    <header className="py-8 container mx-auto px-4 lg:px-0">
       <div className="flex flex-row mx-auto justify-between items-center">
         <Link href="/" className="flex flex-row">
-          <h1 className="text-4xl">Jiss</h1>
-          <h1 className="text-4xl text-accent">J</h1>
-          <h1 className="text-4xl">oy</h1>
+          <Logo />
         </Link>
         <Navbar />
       </div>

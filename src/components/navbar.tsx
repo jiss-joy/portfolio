@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { TbMenu4 } from "react-icons/tb";
 import ThemeButton from "./theme-button";
+import Logo from "./logo";
 
 type LinkType = {
   path: string;
@@ -16,10 +17,6 @@ type LinkType = {
 const Navbar = () => {
   const links: LinkType[] = [
     {
-      path: "/",
-      label: "Home",
-    },
-    {
       path: "/#about",
       label: "About Me",
     },
@@ -27,23 +24,20 @@ const Navbar = () => {
       path: "/#projects",
       label: "Projects",
     },
-    {
-      path: "/#contact",
-      label: "Contact",
-    },
   ];
 
   const pathname = usePathname();
+  const point = `/#${pathname}`;
   return (
     <div>
       {/* Desktop Nav */}
-      <div className="hidden lg:flex gap-4 items-center justify-between">
+      <div className="hidden lg:flex gap-6 items-center justify-between">
         {links.map((link, index) => (
           <Link
             key={index}
             href={link.path}
             className={`${
-              link.path == pathname && "text-accent"
+              link.path == point && "text-accent"
             } capitalize font-medium hover:text-accent transition-all`}
           >
             {link.label}
@@ -52,10 +46,11 @@ const Navbar = () => {
         <Link href="/contact">
           <Button className="bg-accent">Contact Me</Button>
         </Link>
-        <ThemeButton />
+        <ThemeButton classname="hidden lg:flex" />
       </div>
       {/* Mobile Nav */}
-      <div className="lg:hidden">
+      <div className="lg:hidden flex flex-row gap-4">
+        <ThemeButton classname="lg:hidden" />
         <Sheet>
           <SheetTrigger className="flex justify-center items-center">
             <TbMenu4 className="text-[32px] text-accent" />
@@ -63,9 +58,7 @@ const Navbar = () => {
           <SheetContent className="flex flex-col items-center">
             <div className="mt-32 mb-20 text-center text-xl">
               <Link href="/" className="flex flex-row">
-                <h1 className="text-4xl">Jiss</h1>
-                <h1 className="text-4xl text-accent">J</h1>
-                <h1 className="text-4xl">oy</h1>
+                <Logo />
               </Link>
             </div>
             <nav className="flex flex-col justify-center items-center gap-4">
