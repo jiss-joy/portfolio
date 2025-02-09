@@ -12,18 +12,26 @@ const MedillaProjectCard = ({ cardRef }: MedillaProjectCardProps) => {
   const [mouseOnCard, setMouseOnCard] = useState(false);
 
   const desc =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rutrum diam eu ultricies dictum. Maecenas leo est, scelerisque id eleifend vel, varius eget eros. Quisque congue finibus justo, a pharetra orci egestas ac. ';
+    'Designed and built an android application where users can book appointments with doctors and get prescriptions online. Users can also buy over-the-counter drugs and have them delivered to their homes.';
+
+  function mouseLeaveHandler() {
+    setMouseOnCard(false);
+  }
+
+  function mouseEnterHandler() {
+    setMouseOnCard(true);
+  }
 
   return (
     <Card
       ref={ref}
       className='bg-gray-900'
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setMouseOnCard(true)}
-      onMouseLeave={() => setMouseOnCard(false)}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
     >
       <CardHeader>
-        <CardTitle className='text-lg text-white'>Medilla</CardTitle>
+        <CardTitle className='text-lg text-white'>Medillah</CardTitle>
       </CardHeader>
       <CardContent className='flex flex-row justify-between'>
         <div className='max-w-[60%] leading-snug text-white'>{desc}</div>

@@ -13,16 +13,24 @@ const BenriYoyakuProjectCard = ({ cardRef }: BenriYoyakuProjectCardProps) => {
   const { ref, cursor, handleMouseMove } = useMouseCursor(cardRef);
   const [mouseOnCard, setMouseOnCard] = useState(false);
 
+  function mouseLeaveHandler() {
+    setMouseOnCard(false);
+  }
+
+  function mouseEnterHandler() {
+    setMouseOnCard(true);
+  }
+
   const desc =
-    "Led the development of a bio-mimicking, eight-legged spider robot for rough terrain navigation, focusing on the project's programming and control systems, with integrated surveillance capabilities.";
+    'Developing a queue-based reservation management system to reduce wait times for customers at saloons, clinics and restaurants using Next.js and other tools.';
 
   return (
     <Card
       ref={ref}
       className='bg-gray-900'
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setMouseOnCard(true)}
-      onMouseLeave={() => setMouseOnCard(false)}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseLeaveHandler}
     >
       <CardHeader>
         <CardTitle className='text-lg text-white'>便利予約 (Benri Yoyaku)</CardTitle>

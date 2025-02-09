@@ -24,6 +24,7 @@ const Heart = ({ cursor, cardRef, mouseOnCard }: HeartProps) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 28 28'
+      strokeWidth={1}
       strokeLinecap='round'
       strokeLinejoin='round'
       className='lucide lucide-heart-pulse h-36 w-36 transition-all duration-100'

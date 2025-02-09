@@ -48,7 +48,7 @@ export default function Home() {
         {/* About */}
         <div
           id='about'
-          className='space-y-8'
+          className='w-full items-center justify-center space-y-8'
         >
           <h3 className='h3'>About Me</h3>
           <Skills />

@@ -24,9 +24,10 @@ const Calendar = ({ cursor, cardRef, mouseOnCard }: CalendarProps) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 24 24'
+      strokeWidth={1}
       strokeLinecap='round'
       strokeLinejoin='round'
-      className='h-36 w-36 transition-all duration-100'
+      className='lucide lucide-calendar-range h-32 w-36 transition-all duration-100'
     >
       <defs>
         <radialGradient
@@ -43,10 +44,42 @@ const Calendar = ({ cursor, cardRef, mouseOnCard }: CalendarProps) => {
           />
         </radialGradient>
       </defs>
-      <path
-        className='fill-none'
+      <rect
+        width='18'
+        height='18'
+        x='3'
+        y='4'
+        rx='2'
         stroke='url(#primaryGradient)'
-        d='M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5'
+        className='fill-none'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M16 2v4'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M3 10h18'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M8 2v4'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M17 14h-6'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M13 18H7'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M7 14h.01'
+      />
+      <path
+        stroke='url(#primaryGradient)'
+        d='M17 18h.01'
       />
     </svg>
   );
