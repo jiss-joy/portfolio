@@ -10,51 +10,57 @@ import redux from "@public/icons/redux.svg";
 import Image from "next/image";
 import { FaCode } from "react-icons/fa";
 
-const skills = [
+type SkillsType = {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const skills:SkillsType[] = [
   {
     title: "Typescript",
     description: "Programming Language",
-    icon: typescript,
+    icon: typescript as string,
   },
   {
     title: "Ruby",
     description: "Programming Language",
-    icon: ruby,
+    icon: ruby as string,
   },
   {
     title: "React",
     description: "JavaScript Library",
-    icon: react,
+    icon: react as string,
   },
   {
     title: "Next.js",
     description: "React Framework",
-    icon: nextjs,
+    icon: nextjs as string,
   },
   {
     title: "Ruby on Rails",
     description: "Programming Language",
-    icon: rails,
+    icon: rails as string,
   },
   {
     title: "Figma",
     description: "Programming Language",
-    icon: figma,
+    icon: figma as string,
   },
   {
     title: "Tailwind CSS",
     description: "Programming Language",
-    icon: tailwind,
+    icon: tailwind as string,
   },
   {
     title: "Redux",
     description: "Web Server",
-    icon: redux,
+    icon: redux as string,
   },
   {
     title: "AWS",
     description: "Programming Language",
-    icon: aws,
+    icon: aws as string,
   },
 ];
 
