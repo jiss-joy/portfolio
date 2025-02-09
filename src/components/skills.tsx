@@ -8,6 +8,7 @@ import tailwind from "@public/icons/tailwind.svg";
 import aws from "@public/icons/aws.svg";
 import redux from "@public/icons/redux.svg";
 import Image from "next/image";
+import { FaCode } from "react-icons/fa";
 
 const skills = [
   {
@@ -60,17 +61,23 @@ const skills = [
 const Skills = () => {
   return (
     <section className="leading-snug">
-      <h3 className="h3">My skill set</h3>
-      <p>Areas where my expertise lies.</p>
-      <div className="flex flex-wrap gap-4 mt-4 items-center justify-stretch">
+      <div className="flex flex-row gap-2 bg-primary w-fit rounded-full px-4 py-1 items-center justify-center">
+        <FaCode />
+        <h5 className="h4">Skills</h5>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-4 items-center">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center hover:border-accent hover:transition-all justify-start gap-2 border border-white/20 rounded-xl px-4 w-[220px] xl:w-[240] h-[50px]"
+            className="flex bg-white dark:bg-transparent items-center hover:border-accent hover:transition-all justify-start gap-2 dark:border dark:border-white/20 rounded-xl px-4 w-[200px] lg:w-[220px] h-[50px]"
           >
-            <Image src={skill.icon} alt="Ruby" width={36} height={36} />
+            <Image
+              src={skill.icon}
+              alt="Tech"
+              className="w-6 lg:w-8 h-6 lg:h-8"
+            />
             <div className="px-2 py-2">
-              <h5 className="h5">{skill.title}</h5>
+              <h5 className="title lg:h5">{skill.title}</h5>
             </div>
           </div>
         ))}
