@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 
 const stats = [
   {
-    label: "Experience",
+    label: "Years of experience",
     value: 3,
   },
   {
@@ -31,14 +31,15 @@ const Stats = () => {
               >
                 <CountUp
                   end={item.value}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl font-semibold"
+                  duration={6}
+                  enableScrollSpy
+                  scrollSpyOnce
+                  className="text-5xl font-semibold"
                 />
                 <p
                   className={`${
                     item.label.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                  } leading-snug text-white/80`}
+                  } leading-snug`}
                 >
                   {item.label}
                 </p>
