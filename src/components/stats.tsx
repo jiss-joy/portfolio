@@ -14,7 +14,7 @@ const stats = [
   },
   {
     label: 'Code commits',
-    value: 300,
+    value: 2172,
   },
 ];
 

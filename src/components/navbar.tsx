@@ -17,11 +17,11 @@ type LinkType = {
 const Navbar = () => {
   const links: LinkType[] = [
     {
-      path: '/#about',
+      path: '#about',
       label: 'About Me',
     },
     {
-      path: '/#projects',
+      path: '#projects',
       label: 'Projects',
     },
   ];
@@ -70,9 +70,8 @@ const Navbar = () => {
                 <Link
                   key={index}
                   href={link.path}
-                  scroll={false}
                   className={`${
-                    link.path == pathname && 'text-accent'
+                    link.path == point && 'text-accent'
                   } font-medium capitalize transition-all hover:text-accent`}
                 >
                   {link.label}

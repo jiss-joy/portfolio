@@ -21,7 +21,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 5%', 'end 50%'],
+    offset: ['start 20%', 'end 50%'],
   });
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
@@ -32,12 +32,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className='font-sans w-full bg-background dark:bg-background-dark md:px-10'
       ref={containerRef}
     >
-      <div className='mx-auto max-w-7xl px-4 py-2 md:px-8 lg:px-10'>
-        <h2 className='mb-4 max-w-3xl text-lg text-black dark:text-white md:text-3xl'>
-          A glimpse into my journey until now.
-        </h2>
-      </div>
-
       <div
         ref={ref}
         className='relative mx-auto max-w-7xl pb-20'
@@ -48,8 +42,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className='flex justify-start pt-10 md:gap-10 md:pt-16'
           >
             <div className='sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm'>
-              <div className='absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-black md:left-3'>
-                <div className='dark:border-primary-700 h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:bg-neutral-800' />
+              <div className='absolute left-5 flex h-6 w-6 items-center justify-center rounded-full bg-white dark:bg-slate-400 md:left-5'>
+                <div className='dark:border-primary-700 h-4 w-4 rounded-full border border-slate-300 bg-slate-700 p-2 dark:bg-neutral-800' />
               </div>
               {/* Title */}
               <h3 className='hidden text-xl font-bold md:block md:pl-20 lg:text-3xl'>

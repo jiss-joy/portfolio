@@ -7,7 +7,9 @@ const educationData = [
     content: (
       <div>
         <h3 className='h4'>Canbright Co. Ltd.</h3>
-        <p>May 2022 - Present</p>
+        <p>
+          <i>May 2022 - Present</i>
+        </p>
         <p>
           Designed and implemented multiple front-end features using Nextjs, ensuring seamless
           integration with the backend. Designed and implemented key backend features using Ruby on
@@ -22,10 +24,12 @@ const educationData = [
     content: (
       <div>
         <h3 className='h4'>Canbright Co. Ltd.</h3>
-        <p>November 2021 - May 2022</p>
+        <p>
+          <i>November 2021 - May 2022</i>
+        </p>
         <p>
           Developed and implemented an in-house scrum point estimation system, improving team sprint
-          planning. Designed and built the UI with Figma and React. CHECK Contributed innovative
+          planning. Designed and built the frontend UI with Figma and React. Contributed innovative
           ideas to the mobile team, resulting in the improvement of the UI/UX on mobile devices.
         </p>
       </div>
@@ -36,7 +40,9 @@ const educationData = [
     content: (
       <div>
         <h3 className='h4'>Smartech Brain Technologies</h3>
-        <p>August 2020 - January 2021</p>
+        <p>
+          <i>August 2020 - January 2021</i>
+        </p>
         <p>
           Designed, built, and deployed 3 Android e-commerce applications, leveraging various
           Firebase products to enhance functionality and user experience.
@@ -49,7 +55,9 @@ const educationData = [
     content: (
       <div>
         <h3 className='h4'>M.S.Ramaiah University of Applied Sciences</h3>
-        <p>August 2017 - August 2021</p>
+        <p>
+          <i>August 2017 - August 2021</i>
+        </p>
       </div>
     ),
   },
@@ -58,7 +66,9 @@ const educationData = [
     content: (
       <div>
         <h3 className='h4'>Devamatha CMI Public School</h3>
-        <p>August 2017 - August 2021</p>
+        <p>
+          <i>August 2017 - August 2021</i>
+        </p>
       </div>
     ),
   },
