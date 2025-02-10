@@ -31,7 +31,7 @@ const Calendar = ({ cursor, cardRef, mouseOnCard }: CalendarProps) => {
     >
       <defs>
         <radialGradient
-          id='primaryGradient'
+          id='calendarPrimaryGradient'
           gradientUnits='userSpaceOnUse'
           cx={gradientCenter.cx}
           cy={gradientCenter.cy}
@@ -50,35 +50,35 @@ const Calendar = ({ cursor, cardRef, mouseOnCard }: CalendarProps) => {
         x='3'
         y='4'
         rx='2'
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         className='fill-none'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M16 2v4'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M3 10h18'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M8 2v4'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M17 14h-6'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M13 18H7'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M7 14h.01'
       />
       <path
-        stroke='url(#primaryGradient)'
+        stroke='url(#calendarPrimaryGradient)'
         d='M17 18h.01'
       />
     </svg>
