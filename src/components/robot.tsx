@@ -31,7 +31,7 @@ const Robot = ({ cursor, cardRef, mouseOnCard }: RobotProps) => {
     >
       <defs>
         <radialGradient
-          id='primaryGradient'
+          id='robotPrimaryGradient'
           gradientUnits='userSpaceOnUse'
           cx={gradientCenter.cx}
           cy={gradientCenter.cy}
@@ -46,7 +46,7 @@ const Robot = ({ cursor, cardRef, mouseOnCard }: RobotProps) => {
       </defs>
       <path
         className='fill-none'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         d='M12 8V4H8'
       />
       <rect
@@ -55,27 +55,27 @@ const Robot = ({ cursor, cardRef, mouseOnCard }: RobotProps) => {
         x='4'
         y='8'
         rx='2'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         className='fill-none'
       />
       <path
         className='fill-transparent'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         d='M2 14h2'
       />
       <path
         className='fill-transparent'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         d='M20 14h2'
       />
       <path
         className='fill-transparent'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         d='M15 13v2'
       />
       <path
         className='fill-transparent'
-        stroke='url(#primaryGradient)'
+        stroke='url(#robotPrimaryGradient)'
         d='M9 13v2'
       />
     </svg>
