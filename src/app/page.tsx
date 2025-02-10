@@ -12,17 +12,20 @@ import Contact from '@/components/contact';
 export default function Home() {
   return (
     <section className='h-full'>
-      <div className='container h-full items-center justify-center px-4 lg:mx-auto lg:px-0'>
+      <div className='container h-full items-center justify-center px-4 md:px-8 lg:mx-auto lg:px-0'>
         <div className='flex flex-col items-center justify-center lg:flex-row lg:pb-8 lg:pt-8'>
           <div className='lg:hidden'>
             <Photo />
           </div>
-          <div className='text-center lg:text-left'>
+          <div
+            id='#'
+            className='text-center lg:text-left'
+          >
             <h2 className='h2 mb-6'>
               Hi, It&apos;s <span className='text-primary'>Jiss Joy</span>
             </h2>
             <RolesTypingText />
-            <p className='mb-9 mt-5 max-w-[500px]'>
+            <p className='mb-9 mt-5 max-w-[500px] text-lg'>
               Committed to building beautiful applications and writing clean, well-tested code
               focused on performance, scalability, and security.
             </p>
@@ -39,30 +42,28 @@ export default function Home() {
           </div>
         </div>
         <Stats />
-        <div className='mx-4 my-4 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
+        <div className=' mt-16 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
         {/* About */}
         <div
           id='about'
-          className='w-full items-center justify-center'
+          className='mt-16 w-full items-center justify-center space-y-8 lg:my-14'
         >
           <h3 className='h3'>About Me</h3>
           <Skills />
           <ExperienceEducationTimeline />
         </div>
-        <div className='mx-4 my-4 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
         {/* Projects */}
         <div
           id='projects'
-          className='space-y-8'
+          className='mt-16 space-y-8 lg:my-14'
         >
           <h3 className='h3'>Projects</h3>
           <Projects />
         </div>
-        <div className='mx-4 my-4 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
         {/* Contact */}
         <div
           id='contact'
-          className='space-y-8'
+          className='mt-16 space-y-8 lg:my-14'
         >
           <h3 className='h3'>Contact</h3>
           <Contact />

@@ -7,7 +7,7 @@ const DownloadCVButton = () => {
   return (
     <Link
       href='/resume.pdf'
-      download='resume'
+      download='Jiss Joy - Resume'
       target='_blank'
     >
       <Button className='flex items-center gap-2 uppercase'>
