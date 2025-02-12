@@ -5,12 +5,8 @@ import Robot from '../robot';
 import useMouseCursor from '@/lib/hooks/use-mouse-cursor';
 import { useState } from 'react';
 
-type RobotSpiderProjectCardProps = {
-  cardRef: React.RefObject<HTMLDivElement | null>;
-};
-
-const RobotSpiderProjectCard = ({ cardRef }: RobotSpiderProjectCardProps) => {
-  const { ref, cursor, handleMouseMove } = useMouseCursor(cardRef);
+const RobotSpiderProjectCard = () => {
+  const { ref, cursor, handleMouseMove } = useMouseCursor();
   const [mouseOnCard, setMouseOnCard] = useState(false);
 
   const desc =
