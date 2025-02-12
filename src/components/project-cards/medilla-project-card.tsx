@@ -3,12 +3,8 @@ import Heart from '../heart';
 import useMouseCursor from '@/lib/hooks/use-mouse-cursor';
 import { useState } from 'react';
 
-type MedillaProjectCardProps = {
-  cardRef: React.RefObject<HTMLDivElement | null>;
-};
-
-const MedillaProjectCard = ({ cardRef }: MedillaProjectCardProps) => {
-  const { ref, cursor, handleMouseMove } = useMouseCursor(cardRef);
+const MedillaProjectCard = () => {
+  const { ref, cursor, handleMouseMove } = useMouseCursor();
   const [mouseOnCard, setMouseOnCard] = useState(false);
 
   const desc =
