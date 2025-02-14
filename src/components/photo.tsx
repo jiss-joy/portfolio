@@ -3,24 +3,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import notionFace from '@public/my-notion-face.png';
+import photo from '@public/photo.png';
 
 const Photo = () => {
   return (
     <div className='relative h-full w-full'>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: 'easeIn' } }}
+        animate={{ opacity: 1, transition: { duration: 0.5, delay: 1, ease: 'easeIn' } }}
+        className='absolute left-0 top-0 flex h-full w-full items-center justify-center'
       >
-        <div className='absolute h-[298px] w-[298px] lg:h-[498px] lg:w-[498px]'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.5, delay: 1, ease: 'easeIn' } }}
+          className='h-[248px] w-[248px] lg:h-[428px] lg:w-[428px]'
+        >
           <Image
-            src={notionFace}
+            src={photo}
             alt='Me'
             priority
             className='object-contain'
             quality={100}
           />
-        </div>
+        </motion.div>
       </motion.div>
       <motion.svg
         className='h-[300px] w-[300px] lg:h-[506px] lg:w-[506px]'
@@ -31,22 +36,44 @@ const Photo = () => {
         <motion.circle
           cx='253'
           cy='253'
-          r='180'
-          stroke='#ED6A5A'
+          r='230'
+          className='stroke-accent'
           strokeWidth='3'
           strokeLinecap='round'
           strokeLinejoin='round'
-          initial={{ strokeDasharray: '24 10 0 0' }}
+          initial={{ strokeDasharray: '50 10 0 0' }}
           animate={{
             rotate: [180, 360],
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
             velocity: 20,
             repeatDelay: 0,
-            repeatType: 'reverse',
-            ease: 'circInOut',
+            repeatType: 'loop',
+            ease: 'linear',
+          }}
+        />
+        <motion.circle
+          cx='253'
+          cy='253'
+          r='223'
+          className='stroke-accent'
+          opacity={0.4}
+          strokeWidth='3'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          initial={{ strokeDasharray: ['30 10 0 0', '5 10 0 0'] }}
+          animate={{
+            rotate: [180, 360],
+          }}
+          transition={{
+            duration: 24,
+            repeat: Infinity,
+            velocity: 20,
+            repeatDelay: 0,
+            repeatType: 'loop',
+            ease: 'linear',
           }}
         />
       </motion.svg>

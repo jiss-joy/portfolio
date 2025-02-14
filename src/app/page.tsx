@@ -13,13 +13,10 @@ export default function Home() {
   return (
     <section className='h-full'>
       <div className='container h-full items-center justify-center px-4 md:px-8 lg:mx-auto lg:px-0'>
-        <div className='flex flex-col items-center justify-center lg:flex-row lg:pb-8 lg:pt-8'>
-          <div className='lg:hidden'>
-            <Photo />
-          </div>
+        <section className='flex flex-col items-center justify-center lg:flex-row lg:pb-8 lg:pt-8'>
           <div
             id='#'
-            className='text-center lg:text-left'
+            className='order-2 text-center lg:order-none lg:mr-8'
           >
             <h2 className='h2 mb-6'>
               Hi, It&apos;s <span className='text-primary'>Jiss Joy</span>
@@ -37,10 +34,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='hidden lg:flex'>
+          <div className='order-1 mb-8 lg:order-none xl:mb-0'>
             <Photo />
           </div>
-        </div>
+        </section>
         <Stats />
         <div className=' mt-16 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14' />
         {/* About */}
