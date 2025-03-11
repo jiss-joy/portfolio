@@ -27,7 +27,7 @@ export default function Home() {
               focused on performance, scalability, and security.
             </p>
             {/* Resume and SNS */}
-            <div className='flex flex-col items-center gap-8 lg:flex-row'>
+            <div className='flex flex-col items-center gap-8 lg:flex-row justify-center'>
               <DownloadCVButton />
               <div className='mb-8 lg:mb-0'>
                 <SNSButtons />

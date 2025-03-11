@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const sns = [
@@ -9,7 +9,6 @@ const sns = [
     icon: <FaLinkedinIn />,
   },
   { name: 'github', url: 'https://github.com/jiss-joy', icon: <FaGithub /> },
-  { name: 'instagram', url: 'https://instagram.com', icon: <FaInstagram /> },
 ];
 
 const SNSButtons = () => {

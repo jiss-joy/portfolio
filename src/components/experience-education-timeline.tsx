@@ -8,29 +8,13 @@ const educationData = [
       <div>
         <h3 className='h4'>Canbright Co. Ltd.</h3>
         <p>
-          <i>May 2022 - Present</i>
+          <i>November 2021 - Present</i>
         </p>
         <p>
           Designed and implemented multiple front-end features using Nextjs, ensuring seamless
           integration with the backend. Designed and implemented key backend features using Ruby on
           Rails, while refactoring existing code to address database performance bottlenecks,
           resulting in a 40% decrease in application response time.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: 'Software Developer Trainee',
-    content: (
-      <div>
-        <h3 className='h4'>Canbright Co. Ltd.</h3>
-        <p>
-          <i>November 2021 - May 2022</i>
-        </p>
-        <p>
-          Developed and implemented an in-house scrum point estimation system, improving team sprint
-          planning. Designed and built the frontend UI with Figma and React. Contributed innovative
-          ideas to the mobile team, resulting in the improvement of the UI/UX on mobile devices.
         </p>
       </div>
     ),
@@ -67,7 +51,7 @@ const educationData = [
       <div>
         <h3 className='h4'>Devamatha CMI Public School</h3>
         <p>
-          <i>August 2017 - August 2021</i>
+          <i>August 2015 - August 2017</i>
         </p>
       </div>
     ),
