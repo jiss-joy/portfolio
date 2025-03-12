@@ -6,7 +6,7 @@ import Link from 'next/link';
 const DownloadCVButton = () => {
   return (
     <Link
-      href='/resume.pdf'
+      href='https://drive.google.com/uc?export=download&id=19DpjLnchFAOraCTmi3QFVLP4CiD7UP3Z'
       download='Jiss Joy - Resume'
       target='_blank'
     >
