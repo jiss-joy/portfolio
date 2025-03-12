@@ -1,12 +1,19 @@
-import ruby from '@public/icons/ruby.svg';
-import typescript from '@public/icons/typescript.svg';
-import figma from '@public/icons/figma.svg';
-import nextjs from '@public/icons/nextjs.svg';
-import react from '@public/icons/react.svg';
-import rails from '@public/icons/rails.svg';
-import tailwind from '@public/icons/tailwind.svg';
 import aws from '@public/icons/aws.svg';
+import django from '@public/icons/django.svg';
+import docker from '@public/icons/docker.svg';
+import figma from '@public/icons/figma.svg';
+import flutter from '@public/icons/flutter.svg';
+import javascript from '@public/icons/javascript.svg';
+import mysql from '@public/icons/mysql.svg';
+import nextjs from '@public/icons/nextjs.svg';
+import postgresql from '@public/icons/postgresql.svg';
+import python from '@public/icons/python.svg';
+import rails from '@public/icons/rails.svg';
+import react from '@public/icons/react.svg';
 import redux from '@public/icons/redux.svg';
+import ruby from '@public/icons/ruby.svg';
+import tailwind from '@public/icons/tailwind.svg';
+import typescript from '@public/icons/typescript.svg';
 import Image from 'next/image';
 import { FaCode } from 'react-icons/fa';
 
@@ -15,7 +22,11 @@ type SkillsType = {
   icon: string;
 };
 
-const skills: SkillsType[] = [
+const programmingLanguages: SkillsType[] = [
+  {
+    title: 'Javascript',
+    icon: javascript as string,
+  },
   {
     title: 'Typescript',
     icon: typescript as string,
@@ -24,6 +35,13 @@ const skills: SkillsType[] = [
     title: 'Ruby',
     icon: ruby as string,
   },
+  {
+    title: 'Python',
+    icon: python as string,
+  },
+];
+
+const frameworks: SkillsType[] = [
   {
     title: 'React',
     icon: react as string,
@@ -37,8 +55,27 @@ const skills: SkillsType[] = [
     icon: rails as string,
   },
   {
+    title: 'Flutter',
+    icon: flutter as string,
+  },
+  {
+    title: 'Django',
+    icon: django as string,
+  },
+];
+
+const otherTools: SkillsType[] = [
+  {
     title: 'Figma',
     icon: figma as string,
+  },
+  {
+    title: 'MySQL',
+    icon: mysql as string,
+  },
+  {
+    title: 'PostgreSQL',
+    icon: postgresql as string,
   },
   {
     title: 'Tailwind CSS',
@@ -49,10 +86,16 @@ const skills: SkillsType[] = [
     icon: redux as string,
   },
   {
+    title: 'Docker',
+    icon: docker as string,
+  },
+  {
     title: 'AWS',
     icon: aws as string,
   },
 ];
+
+const skills = programmingLanguages.concat(frameworks, otherTools);
 
 const Skills = () => {
   return (
