@@ -16,22 +16,21 @@ export default {
       xl: '1200px',
     },
     fontFamily: {
-      primary: 'var(--font-nunito)',
-      code: 'var(--font-dm-mono)',
-      logo: 'var(--font-concert-one)',
+      primary: 'var(--font-sans)',
+      code: 'var(--font-code)',
+      logo: 'var(--font-logo)',
     },
     extend: {
       colors: {
-        primary: '#ED6A5A',
-        secondary: '#202C39',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: {
-          DEFAULT: '#ED6A5A',
-          hover: '#D74E09',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          hover: 'rgb(var(--color-accent-hover) / <alpha-value>)',
         },
         background: {
-          // DEFAULT: '#D1DEDE',
-          DEFAULT: '#f4f4f4',
-          dark: '#1C0221',
+          DEFAULT: 'rgb(var(--color-background) / <alpha-value>)',
+          dark: 'rgb(var(--color-background-dark) / <alpha-value>)',
         },
       },
     },

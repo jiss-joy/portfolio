@@ -8,24 +8,51 @@ html {
 
 @layer base {
   body {
-    @apply bg-background dark:bg-background-dark leading-loose;
+    @apply leading-loose;
   }
+
+  /* Channel values (R G B) so Tailwind opacity modifiers like bg-primary/90 work */
+  .theme-v1 {
+    --color-primary: 237 106 90;
+    --color-secondary: 32 44 57;
+    --color-accent: 237 106 90;
+    --color-accent-hover: 215 78 9;
+    --color-background: 244 244 244;
+    --color-background-dark: 28 2 33;
+    --font-sans: var(--font-nunito);
+    --font-logo: var(--font-concert-one);
+    --font-code: var(--font-dm-mono);
+  }
+
+  /* Temporary: same tokens as v1 — replace when designing v2 */
+  .theme-v2 {
+    --color-primary: 237 106 90;
+    --color-secondary: 32 44 57;
+    --color-accent: 237 106 90;
+    --color-accent-hover: 215 78 9;
+    --color-background: 244 244 244;
+    --color-background-dark: 28 2 33;
+    --font-sans: var(--font-montserrat);
+    --font-logo: var(--font-concert-one);
+    --font-code: var(--font-dm-mono);
+  }
+
   .h1 {
-    @apply text-5xl xl:text-7xl leading-[1.1] font-semibold;
+    @apply text-5xl font-semibold leading-[1.1] xl:text-7xl;
   }
   .h2 {
-    @apply text-4xl xl:text-5xl leading-[1.1] font-semibold;
+    @apply text-4xl font-semibold leading-[1.1] xl:text-5xl;
   }
   .h3 {
-    @apply text-2xl xl:text-3xl leading-[1.1] font-semibold;
+    @apply text-2xl font-semibold leading-[1.1] xl:text-3xl;
   }
   .h4 {
-    @apply text-lg xl:text-xl leading-[1.1] font-semibold;
+    @apply text-lg font-semibold leading-[1.1] xl:text-xl;
   }
   .h5 {
-    @apply text-base xl:text-lg leading-[1.1] font-semibold;
+    @apply text-base font-semibold leading-[1.1] xl:text-lg;
   }
   .title {
-    @apply text-sm xl:text-base leading-[1.1] font-semibold;
+    @apply text-sm font-semibold leading-[1.1] xl:text-base;
   }
 }

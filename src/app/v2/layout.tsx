@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@/lib/providers/theme-provider'
-import { concertOne, montserrat } from '@/styles/fonts'
+import { concertOne, dmMono, montserrat } from '@/styles/fonts'
 
 export default function V2Layout({
   children,
@@ -7,7 +7,9 @@ export default function V2Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={`${concertOne.variable} ${montserrat.variable} min-h-dvh`}>
+    <div
+      className={`theme-v2 ${montserrat.variable} ${concertOne.variable} ${dmMono.variable} min-h-dvh bg-background font-primary dark:bg-background-dark`}
+    >
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"
