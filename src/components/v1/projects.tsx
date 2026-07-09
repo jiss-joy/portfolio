@@ -1,9 +1,9 @@
 'use client'
 
-import BenriYoyakuProjectCard from './project-cards/benri-yoyaku-project-card'
-import ForumsAppProjectCard from './project-cards/forums-app-project-card'
-import MedillaProjectCard from './project-cards/medilla-project-card'
-import RobotSpiderProjectCard from './project-cards/robot-spider-project-card'
+import BenriYoyakuProjectCard from '@/components/v1/benri-yoyaku-project-card'
+import ForumsAppProjectCard from '@/components/v1/forums-app-project-card'
+import MedillaProjectCard from '@/components/v1/medilla-project-card'
+import RobotSpiderProjectCard from '@/components/v1/robot-spider-project-card'
 
 const Projects = () => {
   return (

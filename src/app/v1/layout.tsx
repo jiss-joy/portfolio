@@ -1,5 +1,5 @@
-import Footer from '@/components/footer'
-import Header from '@/components/header'
+import Footer from '@/components/v1/footer'
+import Header from '@/components/v1/header'
 import { ThemeProvider } from '@/lib/providers/theme-provider'
 import { concertOne, nunito } from '@/styles/fonts'
 
@@ -9,7 +9,7 @@ export default function V1Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className={`${nunito.variable} ${concertOne.variable} font-primary min-h-dvh`}>
+    <div className={`${nunito.variable} ${concertOne.variable} min-h-dvh font-primary`}>
       <ThemeProvider
         attribute="class"
         defaultTheme="light"

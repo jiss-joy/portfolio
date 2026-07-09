@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SNSButtons from './v2/sns-buttons'
+import SNSButtons from './sns-buttons'
 
 export const LeftSection = () => {
   return (
