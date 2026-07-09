@@ -2,7 +2,7 @@ name: PR Commit CI
 on:
   push:
     branches:
-      - "**"
+      - '**'
 
 jobs:
   ci:
@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
-          cache: "npm"
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install packages
         run: npm install --frozen-lockfile

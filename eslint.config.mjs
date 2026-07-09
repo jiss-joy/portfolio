@@ -9,11 +9,11 @@ export default antfu(
     },
     jsdoc: false,
     markdown: false,
-    ignores: ['src/components/ui/icons/**'],
+    ignores: ['src/components/ui/**'],
 
     // Configuration preferences
     lessOpinionated: true,
-    isInEditor: false,
+    isInEditor: true,
 
     // Code style (uses Prettier for formatting)
     stylistic: true,

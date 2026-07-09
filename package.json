@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "lint:q": "eslint --quiet",
     "typecheck": "tsc --noEmit",
     "analyze": "run-p lint typecheck"
   },

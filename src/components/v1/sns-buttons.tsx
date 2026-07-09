@@ -1,6 +1,5 @@
-import React from 'react';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import Link from 'next/link';
+import Link from 'next/link'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 const sns = [
   {
@@ -9,24 +8,24 @@ const sns = [
     icon: <FaLinkedinIn />,
   },
   { name: 'github', url: 'https://github.com/jiss-joy', icon: <FaGithub /> },
-];
+]
 
 const SNSButtons = () => {
   return (
-    <div className='flex gap-2'>
-      {sns.map((e, index) => {
+    <div className="flex gap-2">
+      {sns.map(({ name, url, icon }) => {
         return (
           <Link
-            key={index}
-            href={e.url}
-            className='flex h-9 w-9 items-center justify-center rounded-full border border-accent text-base text-accent duration-500 hover:bg-accent  hover:text-white hover:transition-all'
+            key={name}
+            href={url}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-accent text-base text-accent duration-500 hover:bg-accent  hover:text-white hover:transition-all"
           >
-            {e.icon}
+            {icon}
           </Link>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default SNSButtons;
+export default SNSButtons

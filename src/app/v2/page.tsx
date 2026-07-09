@@ -1,10 +1,10 @@
-import { LeftSection } from '@/components/v2/left-section';
+import { LeftSection } from '@/components/v2/left-section'
 
 export default function Home() {
   return (
-    <main className='flex h-screen px-24'>
+    <main className="flex h-screen px-24">
       <LeftSection />
-      <section className='h-full w-1/2 bg-blue-300'></section>
+      <section className="h-full w-1/2 bg-blue-300"></section>
     </main>
-  );
+  )
 }
