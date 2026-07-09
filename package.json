@@ -10,7 +10,8 @@
     "lint:fix": "eslint --fix",
     "lint:q": "eslint --quiet",
     "typecheck": "tsc --noEmit",
-    "analyze": "run-p lint:q typecheck"
+    "typegen": "next typegen",
+    "analyze": "bun run typegen && run-p lint:q typecheck"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",

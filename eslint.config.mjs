@@ -13,7 +13,8 @@ export default antfu(
 
     // Configuration preferences
     lessOpinionated: true,
-    isInEditor: true,
+    // Let antfu detect the editor. Hardcoding true relaxes rules locally and hides CI failures.
+    isInEditor: false,
 
     // Code style (uses Prettier for formatting)
     stylistic: true,
