@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import { TbMenu4 } from 'react-icons/tb';
 import ThemeButton from './theme-button';
 import Logo from './logo';

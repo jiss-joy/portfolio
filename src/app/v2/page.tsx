@@ -1,4 +1,4 @@
-import { LeftSection } from '@/components/left-section';
+import { LeftSection } from '@/components/v2/left-section';
 
 export default function Home() {
   return (

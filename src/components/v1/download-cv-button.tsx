@@ -1,5 +1,4 @@
-import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { FiDownload } from 'react-icons/fi';
 import Link from 'next/link';
 

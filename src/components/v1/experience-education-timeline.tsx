@@ -1,5 +1,5 @@
 import { LiaToolsSolid } from 'react-icons/lia';
-import { Timeline } from './ui/timeline';
+import { Timeline } from '../ui/timeline';
 
 const educationData = [
   {

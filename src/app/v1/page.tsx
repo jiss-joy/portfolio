@@ -1,13 +1,13 @@
-import Skills from '@/components/skills';
+import Skills from '@/components/v1/skills';
 
-import SNSButtons from '@/components/sns-buttons';
-import RolesTypingText from '@/components/roles-typing-text';
-import Photo from '@/components/photo';
-import Stats from '@/components/stats';
-import ExperienceEducationTimeline from '@/components/experience-education-timeline';
-import Projects from '@/components/projects';
-import DownloadCVButton from '@/components/download-cv-button';
-import Contact from '@/components/contact';
+import SNSButtons from '@/components/v1/sns-buttons';
+import RolesTypingText from '@/components/v1/roles-typing-text';
+import Photo from '@/components/v1/photo';
+import Stats from '@/components/v1/stats';
+import ExperienceEducationTimeline from '@/components/v1/experience-education-timeline';
+import Projects from '@/components/v1/projects';
+import DownloadCVButton from '@/components/v1/download-cv-button';
+import Contact from '@/components/v1/contact';
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
               focused on performance, scalability, and security.
             </p>
             {/* Resume and SNS */}
-            <div className='flex flex-col items-center gap-8 lg:flex-row justify-center'>
+            <div className='flex flex-col items-center justify-center gap-8 lg:flex-row'>
               <DownloadCVButton />
               <div className='mb-8 lg:mb-0'>
                 <SNSButtons />

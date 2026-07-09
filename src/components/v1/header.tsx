@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import Navbar from './navbar';
 import Logo from './logo';
 
