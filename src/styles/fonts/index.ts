@@ -1,4 +1,10 @@
-import { DM_Mono, Nunito, Rethink_Sans, Concert_One } from 'next/font/google';
+import { DM_Mono, Nunito, Rethink_Sans, Concert_One, Montserrat } from 'next/font/google';
+
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+});
 
 const dmMono = DM_Mono({
   variable: '--font-dm-mono',
@@ -24,4 +30,4 @@ const nunito = Nunito({
   subsets: ['latin'],
 });
 
-export { dmMono, rethinkSans, nunito, concertOne };
+export { dmMono, rethinkSans, nunito, concertOne, montserrat };

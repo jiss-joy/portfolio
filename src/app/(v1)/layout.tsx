@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '../styles/globals.css';
+import '../../styles/globals.css';
 import { concertOne, nunito } from '@/styles/fonts';
 import Header from '@/components/header';
 import { ThemeProvider } from '@/lib/providers/theme-provider';

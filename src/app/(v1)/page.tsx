@@ -19,7 +19,7 @@ export default function Home() {
             className='order-2 text-center lg:order-none lg:mr-8'
           >
             <h2 className='h2 mb-6'>
-              Hi, It&apos;s <span className='text-primary'>Jiss Joy</span>
+              Hi, I&apos;m <span className='text-primary'>Jiss Joy</span>
             </h2>
             <RolesTypingText />
             <p className='mb-9 mt-5 max-w-[500px] text-lg'>
