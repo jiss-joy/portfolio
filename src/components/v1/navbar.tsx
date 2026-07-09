@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import { Button } from '../ui/button';
-import { usePathname } from 'next/navigation';
-import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
-import { TbMenu4 } from 'react-icons/tb';
-import ThemeButton from './theme-button';
-import Logo from './logo';
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { TbMenu4 } from 'react-icons/tb'
+import { Button } from '../ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
+import Logo from './logo'
+import ThemeButton from './theme-button'
 
 type LinkType = {
-  path: string;
-  label: string;
-};
+  path: string
+  label: string
+}
 
 const Navbar = () => {
   const links: LinkType[] = [
@@ -23,68 +23,68 @@ const Navbar = () => {
       path: '#projects',
       label: 'Projects',
     },
-  ];
+  ]
 
-  const pathname = usePathname();
-  const point = `/#${pathname}`;
+  const pathname = usePathname()
+  const point = `/#${pathname}`
 
   return (
     <div>
       {/* Desktop Nav */}
-      <div className='hidden items-center justify-between gap-6 lg:flex'>
+      <div className="hidden items-center justify-between gap-6 lg:flex">
         {links.map((link, index) => (
           <Link
             key={index}
             href={link.path}
             className={`${
-              link.path == point && 'text-accent'
+              link.path === point && 'text-accent'
             } font-medium capitalize transition-all hover:text-accent`}
           >
             {link.label}
           </Link>
         ))}
         <Button>
-          <Link href='#contact'>Contact Me</Link>
+          <Link href="#contact">Contact Me</Link>
         </Button>
-        <ThemeButton classname='hidden lg:flex' />
+        <ThemeButton classname="hidden lg:flex" />
       </div>
       {/* Mobile Nav */}
-      <div className='flex flex-row gap-4 lg:hidden'>
-        <ThemeButton classname='lg:hidden' />
+      <div className="flex flex-row gap-4 lg:hidden">
+        <ThemeButton classname="lg:hidden" />
         <Sheet>
-          <SheetTrigger className='flex items-center justify-center'>
-            <TbMenu4 className='text-[32px] text-accent' />
+          <SheetTrigger className="flex items-center justify-center">
+            <TbMenu4 className="text-[32px] text-accent" />
           </SheetTrigger>
-          <SheetContent className='flex flex-col items-center'>
-            <div className='mb-20 mt-32 text-center text-xl'>
+          <SheetContent className="flex flex-col items-center">
+            <div className="mb-20 mt-32 text-center text-xl">
               <Link
-                href='/'
-                className='flex flex-row'
+                href="/"
+                className="flex flex-row"
               >
                 <Logo />
               </Link>
             </div>
-            <nav className='flex flex-col items-center justify-center gap-4'>
+            <nav className="flex flex-col items-center justify-center gap-4">
               {links.map((link, index) => (
                 <Link
                   key={index}
                   href={link.path}
                   className={`${
-                    link.path == point && 'text-accent'
+                    link.path === point && 'text-accent'
                   } font-medium capitalize transition-all hover:text-accent`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Button>
-                <Link href='#contact'>Contact Me</Link>
+                <Link href="#contact">Contact Me</Link>
               </Button>
             </nav>
           </SheetContent>
         </Sheet>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

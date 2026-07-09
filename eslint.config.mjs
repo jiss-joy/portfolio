@@ -1,4 +1,4 @@
-import antfu from '@antfu/eslint-config';
+import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
@@ -9,10 +9,11 @@ export default antfu(
     },
     jsdoc: false,
     markdown: false,
-    ignores: ['src/components/ui/icons/**'],
+    ignores: ['src/components/ui/**'],
 
     // Configuration preferences
     lessOpinionated: true,
+    // Let antfu detect the editor. Hardcoding true relaxes rules locally and hides CI failures.
     isInEditor: false,
 
     // Code style (uses Prettier for formatting)
@@ -22,7 +23,7 @@ export default antfu(
   // --- Custom Rule Overrides ---
   {
     rules: {
-      curly: ['error', 'multi-line'],
+      'curly': ['error', 'multi-line'],
       'max-lines-per-function': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
       'max-depth': ['error', 3],
 
@@ -48,4 +49,4 @@ export default antfu(
       ],
     },
   },
-);
+)

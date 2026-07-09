@@ -1,23 +1,23 @@
-import { concertOne, nunito } from '@/styles/fonts';
-import Header from '@/components/header';
-import { ThemeProvider } from '@/lib/providers/theme-provider';
-import Footer from '@/components/footer';
+import Footer from '@/components/v1/footer'
+import Header from '@/components/v1/header'
+import { ThemeProvider } from '@/lib/providers/theme-provider'
+import { concertOne, nunito } from '@/styles/fonts'
 
 export default function V1Layout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <div className={`${nunito.variable} ${concertOne.variable} font-primary min-h-dvh`}>
+    <div className={`${nunito.variable} ${concertOne.variable} min-h-dvh font-primary`}>
       <ThemeProvider
-        attribute='class'
-        defaultTheme='light'
+        attribute="class"
+        defaultTheme="light"
       >
         <Header />
         {children}
         <Footer />
       </ThemeProvider>
     </div>
-  );
+  )
 }
