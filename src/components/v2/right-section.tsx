@@ -1,8 +1,16 @@
+import { Experiences } from './experiences';
+import { Projects } from './projects';
+import { PersonalCard } from './personal-card';
+import { Contact } from './contact';
+
 export const RightSection = () => {
   return (
-    <section className='h-screen w-1/2 px-16 py-32'>
-      <div className='flex h-full flex-col justify-between'>
-        <div className='flex flex-col gap-16'>Profile Card</div>
+    <section className='h-full w-[55%] overflow-y-auto overscroll-contain scroll-smooth py-32 pe-24 ps-16'>
+      <div className='flex w-full flex-col items-center gap-8'>
+        <PersonalCard />
+        <Experiences />
+        <Projects />
+        <Contact />
       </div>
     </section>
   );

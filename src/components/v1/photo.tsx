@@ -3,7 +3,6 @@
 import photo from '@public/photo.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import React from 'react'
 
 const Photo = () => {
   return (
