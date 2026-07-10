@@ -1,10 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { HiArrowUpRight } from 'react-icons/hi2'
 import SNSButtons from './sns-buttons'
-
-const RESUME_PATH = '/resume.pdf'
 
 const navLinks = [
   { id: 'about', label: 'About' },
@@ -14,13 +11,13 @@ const navLinks = [
 
 export const LeftSection = () => {
   return (
-    <section className="flex h-full w-full max-w-md flex-col justify-between px-8 py-24 lg:max-w-xl lg:px-12 lg:py-28 xl:px-14">
-      <div className="flex flex-col gap-14">
+    <section className="flex w-full max-w-md flex-col gap-10 px-6 py-12 sm:px-8 lg:h-full lg:max-w-xl lg:justify-between lg:gap-14 lg:px-12 lg:py-28 xl:px-14">
+      <div className="flex flex-col gap-8 lg:gap-14">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             Portfolio
           </p>
-          <h1 className="font-primary text-6xl font-extrabold leading-[0.95] tracking-tight text-secondary xl:text-7xl">
+          <h1 className="font-primary text-5xl font-extrabold leading-[0.95] tracking-tight text-secondary lg:text-6xl xl:text-7xl">
             JISS
             <span className="ml-3 text-primary">JOY</span>
           </h1>
@@ -31,7 +28,7 @@ export const LeftSection = () => {
 
         <nav
           aria-label="Page sections"
-          className="flex flex-col gap-3"
+          className="flex flex-row flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:gap-3"
         >
           {navLinks.map(({ id, label }) => (
             <Link
@@ -44,7 +41,7 @@ export const LeftSection = () => {
               }}
               className="group flex w-fit items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary/70 transition-colors hover:text-primary"
             >
-              <span className="h-px w-8 bg-primary/50 transition-all duration-200 group-hover:w-14 group-hover:bg-primary" />
+              <span className="hidden h-px w-8 bg-primary/50 transition-all duration-200 group-hover:w-14 group-hover:bg-primary lg:block" />
               {label}
             </Link>
           ))}
@@ -53,15 +50,6 @@ export const LeftSection = () => {
 
       <div className="flex flex-col gap-4">
         <SNSButtons />
-        <Link
-          href={RESUME_PATH}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex w-fit items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/70 transition-colors hover:text-primary"
-        >
-          Resume
-          <HiArrowUpRight className="size-3.5 text-primary/40 transition-colors group-hover:text-primary" />
-        </Link>
       </div>
     </section>
   )
