@@ -11,7 +11,8 @@ export function proxy(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // v1.jissjoy.com / v2.localhost:3000 → that version; otherwise DEFAULT_VERSION
+  // Wildcard hosts (*.jissjoy.com): v1/v2/... → that version.
+  // Unknown labels (www, foo, apex hostname) → DEFAULT_VERSION.
   const subdomain = host.split('.')[0]?.toLowerCase() ?? ''
   const version = isSiteVersion(subdomain) ? subdomain : DEFAULT_VERSION
 

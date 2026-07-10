@@ -8,24 +8,112 @@ html {
 
 @layer base {
   body {
-    @apply bg-background dark:bg-background-dark leading-loose;
+    @apply leading-loose;
   }
+
+  .theme-v2 {
+    --color-primary: 232 138 154;
+    --color-secondary: 45 36 42;
+    --color-accent: 244 180 196;
+    --color-accent-hover: 224 122 142;
+    --color-background: 255 231 222;
+    --color-background-dark: 86 33 53;
+    --font-sans: var(--font-montserrat);
+    --font-logo: var(--font-concert-one);
+    --font-code: var(--font-dm-mono);
+  }
+
+  /* Channel values (R G B) so Tailwind opacity modifiers like bg-primary/90 work */
+  .theme-v1 {
+    --color-primary: 237 106 90;
+    --color-secondary: 32 44 57;
+    --color-accent: 237 106 90;
+    --color-accent-hover: 215 78 9;
+    --color-background: 244 244 244;
+    --color-background-dark: 28 2 33;
+    --font-sans: var(--font-nunito);
+    --font-logo: var(--font-concert-one);
+    --font-code: var(--font-dm-mono);
+  }
+
   .h1 {
-    @apply text-5xl xl:text-7xl leading-[1.1] font-semibold;
+    @apply text-5xl font-semibold leading-[1.1] xl:text-7xl;
   }
   .h2 {
-    @apply text-4xl xl:text-5xl leading-[1.1] font-semibold;
+    @apply text-4xl font-semibold leading-[1.1] xl:text-5xl;
   }
   .h3 {
-    @apply text-2xl xl:text-3xl leading-[1.1] font-semibold;
+    @apply text-2xl font-semibold leading-[1.1] xl:text-3xl;
   }
   .h4 {
-    @apply text-lg xl:text-xl leading-[1.1] font-semibold;
+    @apply text-lg font-semibold leading-[1.1] xl:text-xl;
   }
   .h5 {
-    @apply text-base xl:text-lg leading-[1.1] font-semibold;
+    @apply text-base font-semibold leading-[1.1] xl:text-lg;
   }
   .title {
-    @apply text-sm xl:text-base leading-[1.1] font-semibold;
+    @apply text-sm font-semibold leading-[1.1] xl:text-base;
+  }
+}
+
+@layer utilities {
+  .v2-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-primary) / 0.45) transparent;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--color-primary) / 0.35);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--color-primary) / 0.6);
+  }
+
+  .sakura-petal {
+    background-image: url('/sakura.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    will-change: transform;
+    animation-name: sakura-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes sakura-fall {
+    0% {
+      transform: translate3d(0, -10vh, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate3d(var(--sakura-sway), 25vh, 0) rotate(90deg);
+    }
+    50% {
+      transform: translate3d(calc(var(--sakura-drift) * 0.4), 55vh, 0) rotate(180deg);
+    }
+    75% {
+      transform: translate3d(calc(var(--sakura-sway) * -0.6), 80vh, 0) rotate(270deg);
+    }
+    100% {
+      transform: translate3d(var(--sakura-drift), 110vh, 0) rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sakura-petal {
+      animation: none;
+      display: none;
+    }
   }
 }
