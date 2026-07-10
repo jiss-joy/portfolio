@@ -82,10 +82,11 @@ html {
   }
 
   .sakura-petal {
-    background-image: url('/sakura.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    /* PNGs currently have black backgrounds — screen blend knocks black out on light pages */
+    mix-blend-mode: screen;
     will-change: transform;
     animation-name: sakura-fall;
     animation-timing-function: linear;

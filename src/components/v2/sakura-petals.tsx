@@ -3,8 +3,11 @@
 import type { CSSProperties } from 'react'
 import { useEffect, useState } from 'react'
 
+const PETAL_IMAGES = ['/sakura.png', '/dark-pink.png', '/light-pink.png'] as const
+
 type Petal = {
   id: number
+  src: (typeof PETAL_IMAGES)[number]
   left: number
   size: number
   duration: number
@@ -19,6 +22,7 @@ const PETAL_COUNT = 10
 function createPetals(): Petal[] {
   return Array.from({ length: PETAL_COUNT }, (_, id) => ({
     id,
+    src: PETAL_IMAGES[id % PETAL_IMAGES.length],
     left: Math.random() * 100,
     size: 10 + Math.random() * 14,
     duration: 10 + Math.random() * 12,
@@ -55,6 +59,7 @@ export function SakuraPetals() {
               'opacity': petal.opacity,
               'animationDuration': `${petal.duration}s`,
               'animationDelay': `${petal.delay}s`,
+              'backgroundImage': `url('${petal.src}')`,
               '--sakura-sway': `${petal.sway}px`,
               '--sakura-drift': `${petal.drift}px`,
             } as CSSProperties

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { cn } from '@/lib/utils'
 import { Button } from '../ui/button'
@@ -11,15 +11,15 @@ type ThemeButtonProps = {
 }
 
 const ThemeButton = ({ classname }: ThemeButtonProps) => {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   function onClick() {
-    if (theme === 'dark') {
-      setTheme('light')
-    }
-    else {
-      setTheme('dark')
-    }
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
   }
 
   return (
@@ -28,8 +28,20 @@ const ThemeButton = ({ classname }: ThemeButtonProps) => {
       onClick={onClick}
       variant="ghost"
       className={cn(classname)}
+      aria-label="Toggle theme"
+      disabled={!mounted}
     >
-      {theme === 'dark' ? <FiSun className="text-[32px]" /> : <FiMoon className="text-[32px]" />}
+      {!mounted
+        ? (
+            <span className="size-8" />
+          )
+        : resolvedTheme === 'dark'
+          ? (
+              <FiSun className="text-[32px]" />
+            )
+          : (
+              <FiMoon className="text-[32px]" />
+            )}
     </Button>
   )
 }

@@ -1,60 +1,45 @@
+import type { TimelineEntry } from '../ui/timeline'
 import { LiaToolsSolid } from 'react-icons/lia'
 import { Timeline } from '../ui/timeline'
 
-const educationData = [
+const timelineData: TimelineEntry[] = [
   {
-    title: 'Fullstack Developer',
-    content: (
-      <div>
-        <h3 className="h4">Canbright Co. Ltd.</h3>
-        <p>
-          <i>November 2021 - Present</i>
-        </p>
-        <p>
-          Designed and implemented multiple front-end features using Nextjs, ensuring seamless
-          integration with the backend. Designed and implemented key backend features using Ruby on
-          Rails, while refactoring existing code to address database performance bottlenecks,
-          resulting in a 40% decrease in application response time.
-        </p>
-      </div>
-    ),
+    role: 'Full-Stack Engineer',
+    organization: 'Cybereason',
+    url: 'https://www.cybereason.com/',
+    date: 'Oct 2025 — Present',
+    description:
+      'Add and maintain features and components to the core portal. Standout features include a tool that visualizes the attack path of a malware, using Next.js and Rust.',
+    technologies: ['TypeScript', 'Rust', 'Next.js'],
   },
   {
-    title: 'Android Developer Intern',
-    content: (
-      <div>
-        <h3 className="h4">Smartech Brain Technologies</h3>
-        <p>
-          <i>August 2020 - January 2021</i>
-        </p>
-        <p>
-          Designed, built, and deployed 3 Android e-commerce applications, leveraging various
-          Firebase products to enhance functionality and user experience.
-        </p>
-      </div>
-    ),
+    role: 'Software Engineer',
+    organization: 'Canbright Co. Ltd.',
+    url: 'https://canbright.co.jp',
+    date: 'Nov 2021 — Oct 2025',
+    description:
+      'Designed and implemented multiple front-end features using Next.js, ensuring seamless integration with the backend. Designed and implemented key backend features using Ruby on Rails, while refactoring existing code to address database performance bottlenecks, resulting in a 40% decrease in application response time.',
+    technologies: ['JavaScript', 'TypeScript', 'Ruby on Rails', 'Next.js', 'AWS'],
   },
   {
-    title: 'Undergraduate',
-    content: (
-      <div>
-        <h3 className="h4">M.S.Ramaiah University of Applied Sciences</h3>
-        <p>
-          <i>August 2017 - August 2021</i>
-        </p>
-      </div>
-    ),
+    role: 'Android Developer Intern',
+    organization: 'Smartech Brain Technologies',
+    date: 'Aug 2020 — Jan 2021',
+    description:
+      'Designed, built, and deployed 3 Android e-commerce applications, leveraging various Firebase products to enhance functionality and user experience.',
+    technologies: ['Java', 'Firebase'],
   },
   {
-    title: 'School',
-    content: (
-      <div>
-        <h3 className="h4">Devamatha CMI Public School</h3>
-        <p>
-          <i>August 2015 - August 2017</i>
-        </p>
-      </div>
-    ),
+    role: 'Undergraduate',
+    organization: 'M.S. Ramaiah University of Applied Sciences',
+    url: 'https://www.msruas.ac.in/',
+    date: 'Aug 2017 — Aug 2021',
+  },
+  {
+    role: 'School',
+    organization: 'Devamatha CMI Public School',
+    url: 'https://www.devamatha.com/',
+    date: 'Aug 2015 — Aug 2017',
   },
 ]
 
@@ -65,7 +50,7 @@ const ExperienceEducationTimeline = () => {
         <LiaToolsSolid />
         <h4 className="h4">Experience and Academic qualifications</h4>
       </div>
-      <Timeline data={educationData} />
+      <Timeline data={timelineData} />
     </section>
   )
 }

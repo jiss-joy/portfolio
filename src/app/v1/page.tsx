@@ -18,10 +18,9 @@ export default function Home() {
             id="#"
             className="order-2 text-center lg:order-none lg:mr-8"
           >
+            <div className="text-sm text-gray-500">Hi, I&apos;m</div>
             <h2 className="h2 mb-6">
-              Hi, I&apos;m
-              {' '}
-              <span className="text-primary">Jiss Joy</span>
+              <span className="font-(montserrat) text-primary">Jiss Joy</span>
             </h2>
             <RolesTypingText />
             <p className="mb-9 mt-5 max-w-[500px] text-lg">
