@@ -1,4 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { HiArrowUpRight } from 'react-icons/hi2'
+
+const RESUME_PATH = '/resume.pdf'
 
 export const PersonalCard = () => {
   return (
@@ -24,18 +28,30 @@ export const PersonalCard = () => {
         </div>
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col gap-3">
+      <div className="flex min-w-0 flex-1 flex-col gap-4">
         <p className="text-sm leading-relaxed text-secondary/75">
           Love football and driving. Beach lover. Building stuff. Cooking. Drawing. Committed to
           building beautiful applications and writing clean, well-tested code focused on
           performance, scalability, and security.
         </p>
-        <a
-          href="mailto:jissjoy1@gmail.com"
-          className="w-fit text-sm font-medium text-primary transition-colors hover:text-accent-hover"
-        >
-          jissjoy1@gmail.com
-        </a>
+
+        <div className="flex flex-col gap-2">
+          <a
+            href="mailto:jissjoy1@gmail.com"
+            className="w-fit text-sm font-medium text-primary transition-colors hover:text-accent-hover"
+          >
+            jissjoy1@gmail.com
+          </a>
+          <Link
+            href={RESUME_PATH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex w-fit items-center gap-1.5 text-sm font-medium text-secondary/70 transition-colors hover:text-primary"
+          >
+            View resume
+            <HiArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </Link>
+        </div>
       </div>
     </section>
   )
