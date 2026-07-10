@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState, type CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
+import { useEffect, useState } from 'react'
 
 type Petal = {
   id: number
@@ -42,18 +43,18 @@ export function SakuraPetals() {
       className="sakura-petals pointer-events-none absolute inset-0 z-0 overflow-hidden"
       aria-hidden
     >
-      {petals.map((petal) => (
+      {petals.map(petal => (
         <span
           key={petal.id}
           className="sakura-petal absolute top-0"
           style={
             {
-              left: `${petal.left}%`,
-              width: petal.size,
-              height: petal.size,
-              opacity: petal.opacity,
-              animationDuration: `${petal.duration}s`,
-              animationDelay: `${petal.delay}s`,
+              'left': `${petal.left}%`,
+              'width': petal.size,
+              'height': petal.size,
+              'opacity': petal.opacity,
+              'animationDuration': `${petal.duration}s`,
+              'animationDelay': `${petal.delay}s`,
               '--sakura-sway': `${petal.sway}px`,
               '--sakura-drift': `${petal.drift}px`,
             } as CSSProperties
