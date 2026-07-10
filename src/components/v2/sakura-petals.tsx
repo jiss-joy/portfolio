@@ -14,7 +14,7 @@ type Petal = {
   drift: number
 }
 
-const PETAL_COUNT = 28
+const PETAL_COUNT = 10
 
 function createPetals(): Petal[] {
   return Array.from({ length: PETAL_COUNT }, (_, id) => ({

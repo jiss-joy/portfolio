@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import SNSButtons from './sns-buttons'
 
 const navLinks = [
@@ -9,7 +10,28 @@ const navLinks = [
   { id: 'projects', label: 'Projects' },
 ] as const
 
+type NavId = (typeof navLinks)[number]['id']
+
+function getHashId(): NavId {
+  const hash = window.location.hash.replace('#', '')
+  return navLinks.some(link => link.id === hash) ? (hash as NavId) : 'about'
+}
+
 export const LeftSection = () => {
+  const [activeId, setActiveId] = useState<NavId>('about')
+
+  useEffect(() => {
+    setActiveId(getHashId())
+
+    const syncHash = () => setActiveId(getHashId())
+    window.addEventListener('hashchange', syncHash)
+    window.addEventListener('popstate', syncHash)
+    return () => {
+      window.removeEventListener('hashchange', syncHash)
+      window.removeEventListener('popstate', syncHash)
+    }
+  }, [])
+
   return (
     <section className="flex w-full max-w-md flex-col gap-10 px-6 py-12 sm:px-8 lg:h-full lg:max-w-xl lg:justify-between lg:gap-14 lg:px-12 lg:py-28 xl:px-14">
       <div className="flex flex-col gap-8 lg:gap-14">
@@ -30,21 +52,35 @@ export const LeftSection = () => {
           aria-label="Page sections"
           className="flex flex-row flex-wrap gap-x-6 gap-y-3 lg:flex-col lg:gap-3"
         >
-          {navLinks.map(({ id, label }) => (
-            <Link
-              key={id}
-              href={`#${id}`}
-              onClick={(event) => {
-                event.preventDefault()
-                history.pushState(null, '', `#${id}`)
-                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }}
-              className="group flex w-fit items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary/70 transition-colors hover:text-primary"
-            >
-              <span className="hidden h-px w-8 bg-primary/50 transition-all duration-200 group-hover:w-14 group-hover:bg-primary lg:block" />
-              {label}
-            </Link>
-          ))}
+          {navLinks.map(({ id, label }) => {
+            const isActive = activeId === id
+
+            return (
+              <Link
+                key={id}
+                href={`#${id}`}
+                aria-current={isActive ? 'true' : undefined}
+                onClick={(event) => {
+                  event.preventDefault()
+                  history.pushState(null, '', `#${id}`)
+                  setActiveId(id)
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
+                className={`group flex w-fit items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] transition-colors ${
+                  isActive ? 'text-primary' : 'text-primary/70 hover:text-primary'
+                }`}
+              >
+                <span
+                  className={`hidden h-px transition-all duration-200 lg:block ${
+                    isActive
+                      ? 'w-14 bg-primary'
+                      : 'w-8 bg-primary/50 group-hover:w-14 group-hover:bg-primary'
+                  }`}
+                />
+                {label}
+              </Link>
+            )
+          })}
         </nav>
       </div>
 

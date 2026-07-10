@@ -11,27 +11,31 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Benri Yoyaku',
+    title: '便利予約 (Benri Yoyaku)',
     year: '2023',
-    description: 'Project details coming soon.',
+    description:
+      'Developed a queue-based reservation management system to reduce wait times for customers at salons, clinics and restaurants using Next.js and other tools.',
     technologies: ['Next.js', 'TypeScript'],
   },
   {
-    title: 'Medilla',
+    title: 'Medillah',
     year: '2021',
-    description: 'Project details coming soon.',
+    description:
+      'Designed and built an android application where users can book appointments with doctors and get prescriptions online. Users can also buy over-the-counter drugs and have them delivered to their homes.',
     technologies: ['Android', 'Firebase'],
   },
   {
     title: 'Bio-mimicking Spider Robot',
     year: '2021',
-    description: 'Project details coming soon.',
+    description:
+      'Led the development of a bio-mimicking, eight-legged spider robot for rough terrain navigation, focusing on the project\'s programming and control systems, with integrated surveillance capabilities.',
     technologies: ['C++', 'Robotics'],
   },
   {
-    title: 'Forums App',
+    title: 'BConnect',
     year: '2020',
-    description: 'Project details coming soon.',
+    description:
+      'An intra-university forum and discussion platform for students to ask and answer questions, and engage in discussions across various categories and topics. Students can chat with each other and share resources.',
     technologies: ['Flutter', 'Firebase'],
   },
 ]
