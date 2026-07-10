@@ -57,6 +57,30 @@ html {
 }
 
 @layer utilities {
+  .v2-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-primary) / 0.45) transparent;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--color-primary) / 0.35);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .v2-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--color-primary) / 0.6);
+  }
+
   .sakura-petal {
     background-image: url('/sakura.png');
     background-size: contain;

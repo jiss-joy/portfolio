@@ -1,13 +1,13 @@
-import { Experiences } from './experiences'
-import { PersonalCard } from './personal-card'
+import { Experiences } from './experiences';
+import { PersonalCard } from './personal-card';
 
 export const RightSection = () => {
   return (
-    <section className="h-full w-[58%] overflow-y-auto overscroll-contain scroll-smooth px-10 py-24 pe-16 lg:px-14 lg:py-28 lg:pe-24">
-      <div className="mx-auto flex w-full max-w-2xl flex-col gap-14 pb-16">
+    <section className='v2-scrollbar h-full w-full overflow-y-auto overscroll-contain scroll-smooth '>
+      <div className='2xl:pe-32 flex w-full flex-col gap-14  py-24 pb-16 pe-6 ps-0 lg:pe-10 lg:ps-6 xl:max-w-3xl xl:pe-24 xl:ps-8'>
         <PersonalCard />
         <Experiences />
       </div>
     </section>
-  )
-}
+  );
+};
