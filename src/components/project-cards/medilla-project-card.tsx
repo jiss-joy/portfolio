@@ -26,7 +26,8 @@ const MedillaProjectCard = () => {
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
     >
-      <CardHeader>
+      <CardHeader className="relative">
+        <span className="absolute right-6 top-6 text-sm text-white/45">2021</span>
         <CardTitle className="text-center text-lg text-white md:text-start">Medillah</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center justify-center gap-2 lg:flex-row lg:justify-between">

@@ -28,7 +28,8 @@ const BenriYoyakuProjectCard = () => {
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
     >
-      <CardHeader>
+      <CardHeader className="relative">
+        <span className="absolute right-6 top-6 text-sm text-white/45">2023</span>
         <CardTitle className="text-center text-lg text-white md:text-start">
           便利予約 (Benri Yoyaku)
         </CardTitle>
