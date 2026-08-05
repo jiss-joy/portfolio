@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { WarmupProjectServers } from '@/components/v1/warmup-project-servers'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <WarmupProjectServers />
+        {children}
+      </body>
     </html>
   )
 }
