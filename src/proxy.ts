@@ -6,6 +6,11 @@ export function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const { pathname } = request.nextUrl
 
+  // App Router API routes live at /api/* — do not version-rewrite them.
+  if (pathname === '/api' || pathname.startsWith('/api/')) {
+    return NextResponse.next()
+  }
+
   // Already under /v1|/v2|... — leave alone (draft preview on apex via /v2)
   if (VERSIONS.some(version => pathname === `/${version}` || pathname.startsWith(`/${version}/`))) {
     return NextResponse.next()
