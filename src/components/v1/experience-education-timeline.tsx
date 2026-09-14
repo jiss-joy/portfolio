@@ -10,7 +10,7 @@ const timelineData: TimelineEntry[] = [
     date: 'Oct 2025 — Present',
     description:
       'Add and maintain features and components to the core portal. Standout features include a tool that visualizes the attack path of a malware, using Next.js and Rust.',
-    technologies: ['TypeScript', 'Rust', 'Next.js'],
+    technologies: ['TypeScript', 'Rust', 'Next.js', 'Golang'],
   },
   {
     role: 'Software Engineer',

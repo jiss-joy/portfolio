@@ -32,7 +32,7 @@ const info = [
   },
   {
     icon: <TiLocationOutline />,
-    title: 'Osaka, Japan',
+    title: 'Tokyo, Japan',
     description: 'Let\'s grab coffee when you are around.',
   },
 ]

@@ -15,6 +15,7 @@ export default function V1Layout({
       <ThemeProvider
         attribute="class"
         defaultTheme="light"
+        disableTransitionOnChange
       >
         <Header />
         {children}

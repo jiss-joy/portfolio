@@ -7,7 +7,6 @@ import Projects from '@/components/v1/projects'
 import RolesTypingText from '@/components/v1/roles-typing-text'
 import Skills from '@/components/v1/skills'
 import SNSButtons from '@/components/v1/sns-buttons'
-import Stats from '@/components/v1/stats'
 
 export default function Home() {
   return (
@@ -39,7 +38,7 @@ export default function Home() {
             <Photo />
           </div>
         </section>
-        <Stats />
+        {/* <Stats /> */}
         <div className=" mt-16 h-[1px] w-full rounded-full bg-slate-900/10 dark:bg-white/10 lg:my-14" />
         {/* About */}
         <div

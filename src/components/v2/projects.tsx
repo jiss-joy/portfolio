@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react'
+import { Gauge } from 'lucide-react'
 import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
 
@@ -7,9 +9,18 @@ interface Project {
   description: string
   technologies: string[]
   url?: string
+  icon?: LucideIcon
 }
 
 const projects: Project[] = [
+  {
+    title: 'Sector One',
+    year: '2026',
+    description:
+      'A local Assetto Corsa overlay: Go handles UDP ingest, record/replay, and SSE; an embedded Next.js dash paints RPM, tyres, and laps from a ring buffer — nothing leaves the machine.',
+    technologies: ['Go', 'Next.js'],
+    icon: Gauge,
+  },
   {
     title: '便利予約 (Benri Yoyaku)',
     year: '2023',
@@ -41,6 +52,8 @@ const projects: Project[] = [
 ]
 
 function ProjectBody({ project }: { project: Project }) {
+  const Icon = project.icon
+
   return (
     <div className="flex w-full flex-col gap-3 sm:flex-row sm:gap-6">
       <div className="shrink-0 pt-0.5 text-xs font-medium uppercase tracking-wider text-secondary/45 sm:w-28">
@@ -48,7 +61,15 @@ function ProjectBody({ project }: { project: Project }) {
       </div>
       <div className="flex min-w-0 flex-1 flex-col gap-2">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base font-semibold leading-snug tracking-tight text-secondary">
+          <h3 className="flex items-center gap-2 text-base font-semibold leading-snug tracking-tight text-secondary">
+            {Icon
+              ? (
+                  <Icon
+                    className="size-5 shrink-0 text-primary"
+                    aria-hidden
+                  />
+                )
+              : null}
             {project.title}
           </h3>
           {project.url

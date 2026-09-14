@@ -2,9 +2,8 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { FiMoon, FiSun } from 'react-icons/fi'
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 import { cn } from '@/lib/utils'
-import { Button } from '../ui/button'
 
 type ThemeButtonProps = {
   classname?: string
@@ -18,31 +17,25 @@ const ThemeButton = ({ classname }: ThemeButtonProps) => {
     setMounted(true)
   }, [])
 
-  function onClick() {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+  if (!mounted) {
+    return (
+      <span
+        className={cn('inline-flex size-10 shrink-0', classname)}
+        aria-hidden
+      />
+    )
   }
 
   return (
-    <Button
-      size="icon"
-      onClick={onClick}
-      variant="ghost"
-      className={cn(classname)}
-      aria-label="Toggle theme"
-      disabled={!mounted}
-    >
-      {!mounted
-        ? (
-            <span className="size-8" />
-          )
-        : resolvedTheme === 'dark'
-          ? (
-              <FiSun className="text-[32px]" />
-            )
-          : (
-              <FiMoon className="text-[32px]" />
-            )}
-    </Button>
+    <AnimatedThemeToggler
+      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+      onThemeChange={setTheme}
+      className={cn(
+        'inline-flex size-5 shrink-0 items-center justify-center rounded-md text-secondary transition-colors hover:bg-primary/10 hover:text-primary dark:text-white',
+        '[&_svg]:size-8',
+        classname,
+      )}
+    />
   )
 }
 
