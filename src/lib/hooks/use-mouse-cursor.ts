@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 const useMouseCursor = () => {
-  const [cursor, setCursor] = useState({ cx: 0, cy: 0 })
+  const [cursor, setCursor] = useState({ cx: 0, cy: 0, width: 0, height: 0 })
   const ref = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
@@ -9,7 +9,7 @@ const useMouseCursor = () => {
       const rect = ref.current.getBoundingClientRect()
       const cx = e.clientX - rect.left
       const cy = e.clientY - rect.top
-      setCursor({ cx, cy })
+      setCursor({ cx, cy, width: rect.width, height: rect.height })
     }
   }
 

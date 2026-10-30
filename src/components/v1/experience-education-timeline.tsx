@@ -9,22 +9,22 @@ const timelineData: TimelineEntry[] = [
     url: 'https://www.cybereason.com/',
     date: 'Oct 2025 — Present',
     description:
-      'Add and maintain features and components to the core portal. Standout features include a tool that visualizes the attack path of a malware, using Next.js and Rust.',
-    technologies: ['TypeScript', 'Rust', 'Next.js', 'Golang'],
+      'Build and maintain features and components for the core Next.js web portal. Designed and built an interactive Attack Path Graph visualization that processes and renders complex security event data from ClickHouse, PostgreSQL, and Redpanda. Added unit and E2E tests and introduced ESLint configs with CI lint checks, reducing release overhead and production regressions.',
+    technologies: ['TypeScript', 'Next.js', 'ClickHouse', 'PostgreSQL', 'Redpanda'],
   },
   {
-    role: 'Software Engineer',
+    role: 'Full-Stack Engineer',
     organization: 'Canbright Co. Ltd.',
     url: 'https://canbright.co.jp',
     date: 'Nov 2021 — Oct 2025',
     description:
-      'Designed and implemented multiple front-end features using Next.js, ensuring seamless integration with the backend. Designed and implemented key backend features using Ruby on Rails, while refactoring existing code to address database performance bottlenecks, resulting in a 40% decrease in application response time.',
-    technologies: ['JavaScript', 'TypeScript', 'Ruby on Rails', 'Next.js', 'AWS'],
+      'Re-engineered core components and optimized full-stack performance across React, GraphQL, and REST architectures, cutting response times by 40% and supporting 56% client growth. Built a custom e-commerce solution tailored to client requirements on Next.js and Ruby on Rails, and led multiple releases through CI/CD pipelines.',
+    technologies: ['TypeScript', 'React', 'Next.js', 'Ruby on Rails', 'GraphQL', 'AWS'],
   },
   {
     role: 'Android Developer Intern',
     organization: 'Smartech Brain Technologies',
-    date: 'Aug 2020 — Jan 2021',
+    date: 'Jul 2020 — Jan 2021',
     description:
       'Designed, built, and deployed 3 Android e-commerce applications, leveraging various Firebase products to enhance functionality and user experience.',
     technologies: ['Java', 'Firebase'],

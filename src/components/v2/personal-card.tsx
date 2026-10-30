@@ -23,14 +23,14 @@ export const PersonalCard = () => {
           />
         </div>
         <div className="text-center">
-          <p className="text-sm font-semibold tracking-wide text-secondary">Frontend Engineer</p>
+          <p className="text-sm font-semibold tracking-wide text-secondary">Full-Stack Engineer</p>
           <p className="mt-1 text-xs text-secondary/60">Tokyo, Japan</p>
         </div>
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-4">
         <p className="text-sm leading-relaxed text-secondary/75">
-          With over 4 years of experience, I focus on building beautiful applications with clean,
+          With 5 years of experience, I focus on building beautiful applications with clean,
           well-tested code — always with performance, scalability, and security in mind. Outside of
           work you&apos;ll usually find me on a football pitch, behind the wheel, or somewhere near
           the beach, and I cook and draw when I need a slower pace.

@@ -1,17 +1,25 @@
+import android from '@public/icons/android.svg'
 import aws from '@public/icons/aws.svg'
+import clickhouse from '@public/icons/clickhouse.svg'
 import django from '@public/icons/django.svg'
 import docker from '@public/icons/docker.svg'
 import figma from '@public/icons/figma.svg'
 import flutter from '@public/icons/flutter.svg'
+import go from '@public/icons/go.svg'
+import graphql from '@public/icons/graphql.svg'
 import javascript from '@public/icons/javascript.svg'
+import jest from '@public/icons/jest.svg'
 import mysql from '@public/icons/mysql.svg'
+import nestjs from '@public/icons/nestjs.svg'
 import nextjs from '@public/icons/nextjs.svg'
 import postgresql from '@public/icons/postgresql.svg'
+import prisma from '@public/icons/prisma.svg'
 import python from '@public/icons/python.svg'
 import rails from '@public/icons/rails.svg'
 import react from '@public/icons/react.svg'
-import redux from '@public/icons/redux.svg'
+import redis from '@public/icons/redis.svg'
 import ruby from '@public/icons/ruby.svg'
+import sentry from '@public/icons/sentry.svg'
 import tailwind from '@public/icons/tailwind.svg'
 import typescript from '@public/icons/typescript.svg'
 import Image from 'next/image'
@@ -39,6 +47,10 @@ const programmingLanguages: SkillsType[] = [
     title: 'Python',
     icon: python as string,
   },
+  {
+    title: 'Go',
+    icon: go as string,
+  },
 ]
 
 const frameworks: SkillsType[] = [
@@ -62,6 +74,18 @@ const frameworks: SkillsType[] = [
     title: 'Django',
     icon: django as string,
   },
+  {
+    title: 'NestJS',
+    icon: nestjs as string,
+  },
+  {
+    title: 'GraphQL',
+    icon: graphql as string,
+  },
+  {
+    title: 'Android',
+    icon: android as string,
+  },
 ]
 
 const otherTools: SkillsType[] = [
@@ -82,16 +106,32 @@ const otherTools: SkillsType[] = [
     icon: tailwind as string,
   },
   {
-    title: 'Redux',
-    icon: redux as string,
-  },
-  {
     title: 'Docker',
     icon: docker as string,
   },
   {
     title: 'AWS',
     icon: aws as string,
+  },
+  {
+    title: 'Redis',
+    icon: redis as string,
+  },
+  {
+    title: 'ClickHouse',
+    icon: clickhouse as string,
+  },
+  {
+    title: 'Prisma',
+    icon: prisma as string,
+  },
+  {
+    title: 'Jest',
+    icon: jest as string,
+  },
+  {
+    title: 'Sentry',
+    icon: sentry as string,
   },
 ]
 
