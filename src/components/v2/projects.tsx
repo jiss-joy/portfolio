@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { Gauge } from 'lucide-react'
+import { Gauge, Spade, Webhook } from 'lucide-react'
 import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
 
@@ -18,12 +18,28 @@ const projects: Project[] = [
     year: '2026',
     description:
       'A local Assetto Corsa overlay: Go handles UDP ingest, record/replay, and SSE; an embedded Next.js dash paints RPM, tyres, and laps from a ring buffer — nothing leaves the machine.',
-    technologies: ['Go', 'Next.js'],
+    technologies: ['Go', 'Next.js', 'SSE'],
     icon: Gauge,
   },
   {
+    title: 'AegisFlow',
+    year: '2026',
+    description:
+      'A multi-tenant webhook delivery platform: a Go API ingests events, queues them in Redis, and delivers to registered endpoints with HMAC signing and automatic retries, plus a Next.js dashboard to inspect every attempt.',
+    technologies: ['Go', 'Next.js', 'Redis'],
+    icon: Webhook,
+  },
+  {
+    title: 'Planning Ninja',
+    year: '2025 — Present',
+    description:
+      'A real-time Scrum planning-poker app: teams estimate story points together live over WebSockets, backed by a NestJS API and PostgreSQL behind a Next.js frontend.',
+    technologies: ['Next.js', 'NestJS', 'WebSockets', 'PostgreSQL'],
+    icon: Spade,
+  },
+  {
     title: '便利予約 (Benri Yoyaku)',
-    year: '2023',
+    year: '2024',
     description:
       'Developed a queue-based reservation management system to reduce wait times for customers at salons, clinics and restaurants using Next.js and other tools.',
     technologies: ['Next.js', 'TypeScript'],

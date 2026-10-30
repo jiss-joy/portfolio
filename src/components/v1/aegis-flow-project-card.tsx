@@ -10,7 +10,7 @@ const AegisFlowProjectCard = () => {
   const [mouseOnCard, setMouseOnCard] = useState(false)
 
   const desc
-    = 'Built a multi-tenant webhook delivery engine that ingests events over an API, queues them in Redis, and delivers to registered endpoints with signing, retries, and a dashboard to inspect attempts — Go API workers plus a Next.js UI.'
+    = 'A multi-tenant webhook delivery platform: a Go API ingests events, queues them in Redis, and delivers to registered endpoints with HMAC signing and automatic retries, plus a Next.js dashboard to inspect every attempt.'
 
   return (
     <Card

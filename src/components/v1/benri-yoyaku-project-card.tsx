@@ -29,7 +29,7 @@ const BenriYoyakuProjectCard = () => {
       onMouseLeave={mouseLeaveHandler}
     >
       <CardHeader className="relative">
-        <span className="absolute right-6 top-6 text-sm text-white/45">2023</span>
+        <span className="absolute right-6 top-6 text-sm text-white/45">2024</span>
         <CardTitle className="text-center text-lg text-white md:text-start">
           便利予約 (Benri Yoyaku)
         </CardTitle>
