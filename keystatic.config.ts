@@ -1,4 +1,4 @@
-import { config, fields, singleton } from '@keystatic/core'
+import { collection, config, fields, singleton } from '@keystatic/core'
 
 export default config({
   storage: {
@@ -17,6 +17,42 @@ export default config({
         phone: fields.text({ label: 'Phone', validation: { isRequired: true } }),
         linkedinUrl: fields.url({ label: 'LinkedIn URL' }),
         githubUrl: fields.url({ label: 'GitHub URL' }),
+      },
+    }),
+  },
+  collections: {
+    experience: collection({
+      label: 'Experience',
+      path: 'src/content/experience/*/',
+      slugField: 'organizationName',
+      columns: ['organizationName', 'designation', 'startDate', 'endDate'],
+      schema: {
+        organizationName: fields.slug({ name: { label: 'Organization Name', validation: { isRequired: true } } }),
+        designation: fields.text({ label: 'Designation', validation: { isRequired: true } }),
+        startDate: fields.date({ label: 'Start Date', validation: { isRequired: true } }),
+        endDate: fields.date({ label: 'End Date' }),
+        organizationUrl: fields.url({ label: 'Organization URL' }),
+        description: fields.text({ label: 'Description', multiline: true }),
+        technologies: fields.array(fields.text({ label: 'Technology' }), { label: 'Technologies', itemLabel: props => props.value }),
+      },
+    }),
+    education: collection({
+      label: 'Education',
+      path: 'src/content/education/*/',
+      slugField: 'institutionName',
+      columns: ['institutionName', 'degree', 'startDate', 'endDate'],
+      schema: {
+        institutionName: fields.slug({ name: { label: 'Institution Name', validation: { isRequired: true } } }),
+        degree: fields.text({
+          label: 'Degree / Qualification',
+          description: 'e.g. Bachelor of Technology, Higher Secondary (Class 12)',
+          validation: { isRequired: true },
+        }),
+        fieldOfStudy: fields.text({ label: 'Field of Study', description: 'e.g. Computer Science Engineering' }),
+        startDate: fields.date({ label: 'Start Date', validation: { isRequired: true } }),
+        endDate: fields.date({ label: 'End Date', description: 'Leave empty if ongoing' }),
+        institutionUrl: fields.url({ label: 'Institution URL' }),
+        description: fields.text({ label: 'Description', description: 'Optional: honours, thesis, notable achievements', multiline: true }),
       },
     }),
   },

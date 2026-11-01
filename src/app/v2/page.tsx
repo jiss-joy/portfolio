@@ -1,6 +1,7 @@
 import { LeftSection } from '@/components/v2/left-section'
 import { RightSection } from '@/components/v2/right-section'
 import { SakuraPetals } from '@/components/v2/sakura-petals'
+import SNSButtons from '@/components/v2/sns-buttons'
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <SakuraPetals />
       <main className="relative z-10 flex w-full flex-col lg:h-full lg:flex-row">
         <div className="w-full lg:flex lg:h-full lg:min-w-0 lg:flex-1 lg:justify-end">
-          <LeftSection />
+          <LeftSection socials={<SNSButtons />} />
         </div>
         <div className="w-full lg:flex lg:h-full lg:min-w-0 lg:flex-1">
           <RightSection />

@@ -1,3 +1,5 @@
+'server-only'
+
 import { createReader } from '@keystatic/core/reader'
 import { cache } from 'react'
 import keystaticConfig from '../../keystatic.config'
@@ -10,6 +12,16 @@ export const getProfile = cache(async () => {
   return reader.singletons.profile.readOrThrow()
 })
 
-export const getSkills = cache(async () => {
-  return reader.collections.skills.all()
+// ISO date strings (YYYY-MM-DD) sort correctly as plain strings
+const byStartDateDesc = (a: { entry: { startDate: string } }, b: { entry: { startDate: string } }) =>
+  b.entry.startDate.localeCompare(a.entry.startDate)
+
+export const getExperience = cache(async () => {
+  const entries = await reader.collections.experience.all()
+  return entries.sort(byStartDateDesc)
+})
+
+export const getEducation = cache(async () => {
+  const entries = await reader.collections.education.all()
+  return entries.sort(byStartDateDesc)
 })

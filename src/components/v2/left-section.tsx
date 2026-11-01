@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import SNSButtons from './sns-buttons'
 
 const navLinks = [
   { id: 'about', label: 'About' },
@@ -17,7 +16,8 @@ function getHashId(): NavId {
   return navLinks.some(link => link.id === hash) ? (hash as NavId) : 'about'
 }
 
-export const LeftSection = () => {
+// socials is passed in as a slot so the server-rendered SNS buttons (which read content from disk) stay out of the client bundle
+export const LeftSection = ({ socials }: { socials: React.ReactNode }) => {
   const [activeId, setActiveId] = useState<NavId>('about')
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export const LeftSection = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <SNSButtons />
+        {socials}
       </div>
     </section>
   )
