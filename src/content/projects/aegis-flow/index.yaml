@@ -1,0 +1,11 @@
+title: AegisFlow
+startDate: 2026-07-01
+ongoing: false
+description: >-
+  A multi-tenant webhook delivery platform: a Go API ingests events, queues them
+  in Redis, and delivers to registered endpoints with HMAC signing and automatic
+  retries, plus a Next.js dashboard to inspect every attempt.
+technologies:
+  - Go
+  - Next.js
+  - Redis

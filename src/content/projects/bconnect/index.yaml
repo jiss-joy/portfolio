@@ -1,0 +1,10 @@
+title: BConnect
+startDate: 2020-01-01
+ongoing: false
+description: >-
+  An intra-university forum and discussion platform for students to ask and
+  answer questions, and engage in discussions across various categories and
+  topics. Students can chat with each other and share resources.
+technologies:
+  - Flutter
+  - Firebase

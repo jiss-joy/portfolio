@@ -13,6 +13,7 @@ const Projects = async () => {
           title={entry.title}
           year={entry.startDate.slice(0, 4)}
           description={entry.description}
+          technologies={entry.technologies}
         />
       ))}
     </div>

@@ -1,0 +1,12 @@
+title: Sector One
+startDate: 2026-09-01
+ongoing: false
+description: >-
+  A local Assetto Corsa overlay: Go handles UDP ingest, record/replay, and SSE;
+  an embedded Next.js dash paints RPM, tyres, and laps from a ring buffer —
+  nothing leaves the machine.
+technologies:
+  - Go
+  - Next.js
+  - SSE
+githubUrl: https://github.com/jiss-joy/sector-one

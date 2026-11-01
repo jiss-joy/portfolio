@@ -55,5 +55,27 @@ export default config({
         description: fields.text({ label: 'Description', description: 'Optional: honours, thesis, notable achievements', multiline: true }),
       },
     }),
+    projects: collection({
+      label: 'Projects',
+      path: 'src/content/projects/*/',
+      slugField: 'title',
+      columns: ['title', 'startDate', 'ongoing'],
+      schema: {
+        title: fields.slug({
+          name: { label: 'Title', validation: { isRequired: true } },
+          slug: { description: 'Also keys the per-version illustration/icon for this project, so keep it stable once set' },
+        }),
+        startDate: fields.date({
+          label: 'Start Date',
+          description: 'Only the year is shown on the site; the full date decides order between projects from the same year',
+          validation: { isRequired: true },
+        }),
+        ongoing: fields.checkbox({ label: 'Ongoing', description: 'Shows the year as "2025 — Present"' }),
+        description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
+        technologies: fields.array(fields.text({ label: 'Technology' }), { label: 'Technologies', itemLabel: props => props.value }),
+        liveUrl: fields.url({ label: 'Live URL' }),
+        githubUrl: fields.url({ label: 'GitHub URL' }),
+      },
+    }),
   },
 })

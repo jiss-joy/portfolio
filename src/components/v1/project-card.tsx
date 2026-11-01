@@ -2,7 +2,7 @@
 
 import type { ComponentType, RefObject } from 'react'
 import { useState } from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Calendar from '@/components/v1/calendar'
 import Forums from '@/components/v1/forums'
 import Gauge from '@/components/v1/gauge'
@@ -34,9 +34,10 @@ type ProjectCardProps = {
   title: string
   year: string
   description: string
+  technologies: readonly string[]
 }
 
-const ProjectCard = ({ slug, title, year, description }: ProjectCardProps) => {
+const ProjectCard = ({ slug, title, year, description, technologies }: ProjectCardProps) => {
   const { ref, cursor, handleMouseMove } = useMouseCursor()
   const [mouseOnCard, setMouseOnCard] = useState(false)
   const Illustration = illustrations[slug]
@@ -71,6 +72,22 @@ const ProjectCard = ({ slug, title, year, description }: ProjectCardProps) => {
             )
           : null}
       </CardContent>
+      {technologies.length > 0
+        ? (
+            <CardFooter>
+              <ul className="flex w-full flex-wrap justify-center gap-2 md:justify-start">
+                {technologies.map(technology => (
+                  <li
+                    key={technology}
+                    className="rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-medium tracking-wide text-white/70"
+                  >
+                    {technology}
+                  </li>
+                ))}
+              </ul>
+            </CardFooter>
+          )
+        : null}
     </Card>
   )
 }

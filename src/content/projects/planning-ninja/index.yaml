@@ -1,0 +1,12 @@
+title: Planning Ninja
+startDate: 2025-01-01
+ongoing: true
+description: >-
+  A real-time Scrum planning-poker app: teams estimate story points together
+  live over WebSockets, backed by a NestJS API and PostgreSQL behind a Next.js
+  frontend.
+technologies:
+  - Next.js
+  - NestJS
+  - WebSockets
+  - PostgreSQL
