@@ -2,6 +2,7 @@ import React from 'react'
 import { BiPhoneCall } from 'react-icons/bi'
 import { HiOutlineMail } from 'react-icons/hi'
 import { TiLocationOutline } from 'react-icons/ti'
+import { getProfile } from '@/lib/content'
 
 type InfoBlockProps = {
   icon: React.ReactNode
@@ -19,25 +20,27 @@ const InfoBlock = ({ icon, title, description }: InfoBlockProps) => {
   )
 }
 
-const info = [
-  {
-    icon: <BiPhoneCall />,
-    title: '+81 7012994499',
-    description: 'Monday-Friday from 9:00~19:00',
-  },
-  {
-    icon: <HiOutlineMail />,
-    title: 'jissjoy1@gmail.com',
-    description: 'Feel free to drop a mail.',
-  },
-  {
-    icon: <TiLocationOutline />,
-    title: 'Tokyo, Japan',
-    description: 'Let\'s grab coffee when you are around.',
-  },
-]
+const Contact = async () => {
+  const profile = await getProfile()
+  const { email, address, phone } = profile
 
-const Contact = () => {
+  const info = [
+    {
+      icon: <BiPhoneCall />,
+      title: phone,
+      description: 'Monday-Friday from 9:00~19:00',
+    },
+    {
+      icon: <HiOutlineMail />,
+      title: email,
+      description: 'Feel free to drop a mail.',
+    },
+    {
+      icon: <TiLocationOutline />,
+      title: address,
+      description: 'Let\'s grab coffee when you are around.',
+    },
+  ]
   return (
     <div className="flex h-fit flex-col items-center justify-between gap-10 rounded-xl bg-primary p-4 px-20  py-4 lg:flex-row lg:py-12">
       {info.map(i => (

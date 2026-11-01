@@ -10,6 +10,7 @@ export default config({
       path: 'src/content/profile/',
       schema: {
         name: fields.text({ label: 'Name', validation: { isRequired: true } }),
+        designation: fields.text({ label: 'Designation', validation: { isRequired: true } }),
         description: fields.text({ label: 'Description', multiline: true }),
         email: fields.text({ label: 'Email', validation: { isRequired: true } }),
         address: fields.text({ label: 'Address', validation: { isRequired: true } }),
