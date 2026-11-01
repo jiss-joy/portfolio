@@ -3,11 +3,9 @@ import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
 import { getProfile } from '@/lib/content'
 
-const RESUME_PATH = '/resume.pdf'
-
 export const PersonalCard = async () => {
   const profile = await getProfile()
-  const { name, designation, description, email, address } = profile
+  const { name, designation, description, email, address, resume } = profile
   return (
     <section
       id="about"
@@ -44,7 +42,7 @@ export const PersonalCard = async () => {
             {email}
           </a>
           <Link
-            href={RESUME_PATH}
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex w-fit items-center gap-1.5 text-sm font-medium text-secondary/70 transition-colors hover:text-primary"

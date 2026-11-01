@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import { FiExternalLink } from 'react-icons/fi'
+import { getProfile } from '@/lib/content'
 import { Button } from '../ui/button'
 
-const DownloadCVButton = () => {
+const DownloadCVButton = async () => {
+  const { resume } = await getProfile()
+
   return (
     <Link
-      href="/resume.pdf"
+      href={resume}
       target="_blank"
       rel="noopener noreferrer"
     >

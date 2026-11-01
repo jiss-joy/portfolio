@@ -33,6 +33,22 @@ export const getProjects = cache(async () => {
   return entries.sort(byStartDateDesc)
 })
 
+const MS_PER_YEAR = 365.25 * 24 * 60 * 60 * 1000
+
+// Years of experience sums each job's duration (gaps between jobs don't count; an ongoing job counts up to the build date)
+export const getStats = cache(async () => {
+  const [experience, projects] = await Promise.all([getExperience(), getProjects()])
+  const experienceMs = experience.reduce((total, { entry }) => {
+    const end = entry.endDate ? Date.parse(entry.endDate) : Date.now()
+    return total + end - Date.parse(entry.startDate)
+  }, 0)
+
+  return {
+    yearsOfExperience: Math.floor(experienceMs / MS_PER_YEAR),
+    projectCount: projects.length,
+  }
+})
+
 // icon becomes the public URL of public/icons/<icon>.svg, or null when that file doesn't exist,
 // so a skill added without an icon renders a fallback instead of a broken image.
 function withIconPath(skill: { name: string, icon: string }) {

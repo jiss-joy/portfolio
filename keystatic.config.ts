@@ -1,4 +1,5 @@
 import { collection, config, fields, singleton } from '@keystatic/core'
+import { withFileDetails } from '@/lib/keystatic/with-file-details'
 
 // One drag-to-reorder list per skill group; the list order is the display order
 function skillList(label: string) {
@@ -31,6 +32,15 @@ export default config({
         phone: fields.text({ label: 'Phone', validation: { isRequired: true } }),
         linkedinUrl: fields.url({ label: 'LinkedIn URL' }),
         githubUrl: fields.url({ label: 'GitHub URL' }),
+        // Saved as public/files/resume.<ext> (the name comes from the field key), so an upload replaces the old file at the same URL.
+        // Its own directory because Keystatic loads every file in it when opening this entry.
+        resume: withFileDetails(fields.file({
+          label: 'Resume',
+          description: 'PDF linked from the "View resume" buttons. Click Save after choosing a file to replace it',
+          directory: 'public/files',
+          publicPath: '/files/',
+          validation: { isRequired: true },
+        })),
       },
     }),
     skills: singleton({

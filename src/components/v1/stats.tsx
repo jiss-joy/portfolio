@@ -2,22 +2,11 @@
 
 import CountUp from 'react-countup'
 
-const stats = [
-  {
-    label: 'Years of experience',
-    value: 4,
-  },
-  {
-    label: 'Projects Completed',
-    value: 8,
-  },
-  {
-    label: 'Code commits',
-    value: 2172,
-  },
-]
+type StatsProps = {
+  stats: { label: string, value: number }[]
+}
 
-const Stats = () => {
+const Stats = ({ stats }: StatsProps) => {
   return (
     <section className="pt-4 xl:pt-0">
       <div className="container mx-auto">

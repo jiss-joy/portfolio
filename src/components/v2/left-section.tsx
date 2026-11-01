@@ -17,8 +17,9 @@ function getHashId(): NavId {
 }
 
 // socials is passed in as a slot so the server-rendered SNS buttons (which read content from disk) stay out of the client bundle
-export const LeftSection = ({ socials }: { socials: React.ReactNode }) => {
+export const LeftSection = ({ name, socials }: { name: string, socials: React.ReactNode }) => {
   const [activeId, setActiveId] = useState<NavId>('about')
+  const [firstName, ...restOfName] = name.split(' ')
 
   useEffect(() => {
     setActiveId(getHashId())
@@ -39,13 +40,10 @@ export const LeftSection = ({ socials }: { socials: React.ReactNode }) => {
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             Portfolio
           </p>
-          <h1 className="font-primary text-5xl font-extrabold leading-[0.95] tracking-tight text-secondary lg:text-6xl xl:text-7xl">
-            JISS
-            <span className="ml-3 text-primary">JOY</span>
+          <h1 className="font-primary text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-secondary lg:text-6xl xl:text-7xl">
+            {firstName}
+            <span className="ml-3 text-primary">{restOfName.join(' ')}</span>
           </h1>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-secondary/55">
-            Building thoughtful interfaces and reliable systems.
-          </p>
         </div>
 
         <nav
