@@ -1,5 +1,19 @@
 import { collection, config, fields, singleton } from '@keystatic/core'
 
+// One drag-to-reorder list per skill group; the list order is the display order
+function skillList(label: string) {
+  return fields.array(
+    fields.object({
+      name: fields.text({ label: 'Name', validation: { isRequired: true } }),
+      icon: fields.text({
+        label: 'Icon',
+        description: 'File name in public/icons without .svg (e.g. "nextjs"). Leave empty or unmatched for a generic icon',
+      }),
+    }),
+    { label, itemLabel: props => props.fields.name.value },
+  )
+}
+
 export default config({
   storage: {
     kind: 'local',
@@ -17,6 +31,15 @@ export default config({
         phone: fields.text({ label: 'Phone', validation: { isRequired: true } }),
         linkedinUrl: fields.url({ label: 'LinkedIn URL' }),
         githubUrl: fields.url({ label: 'GitHub URL' }),
+      },
+    }),
+    skills: singleton({
+      label: 'Skills',
+      path: 'src/content/skills/',
+      schema: {
+        languages: skillList('Languages'),
+        frameworks: skillList('Frameworks / Libraries'),
+        tools: skillList('Tools / Platforms'),
       },
     }),
   },
