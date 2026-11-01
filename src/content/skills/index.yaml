@@ -9,7 +9,6 @@ languages:
     icon: go
   - name: Python
     icon: python
-  - name: Rust
 frameworks:
   - name: React
     icon: react
