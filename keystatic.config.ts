@@ -1,4 +1,5 @@
 import { collection, config, fields, singleton } from '@keystatic/core'
+import { isGitHubStorage } from '@/lib/keystatic/storage'
 import { withFileDetails } from '@/lib/keystatic/with-file-details'
 
 // One drag-to-reorder list per skill group; the list order is the display order
@@ -16,8 +17,17 @@ function skillList(label: string) {
 }
 
 export default config({
-  storage: {
-    kind: 'local',
+  // GitHub mode: main is protected, so Keystatic saves to content/* branches and you merge them via PR
+  storage: isGitHubStorage
+    ? { kind: 'github', repo: 'jiss-joy/portfolio', branchPrefix: 'content/' }
+    : { kind: 'local' },
+  ui: {
+    brand: { name: 'Portfolio' },
+    navigation: {
+      About: ['profile', 'skills'],
+      Career: ['experience', 'education'],
+      Work: ['projects'],
+    },
   },
   singletons: {
     profile: singleton({
