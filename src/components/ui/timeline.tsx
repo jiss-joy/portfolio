@@ -10,7 +10,7 @@ export interface TimelineEntry {
   url?: string
   date: string
   description?: string
-  technologies?: string[]
+  technologies?: readonly string[]
 }
 
 function OrganizationName({

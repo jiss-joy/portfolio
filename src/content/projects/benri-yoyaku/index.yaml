@@ -1,0 +1,9 @@
+title: 便利予約 (Benri Yoyaku)
+startDate: 2024-04-29
+ongoing: false
+description: >-
+  Developed a queue-based reservation management system to reduce wait times for
+  customers at salons, clinics and restaurants using Next.js and other tools.
+technologies:
+  - Next.js
+  - TypeScript

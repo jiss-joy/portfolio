@@ -1,43 +1,17 @@
 import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
+import { getExperience } from '@/lib/content'
+import { formatDateRange } from '@/lib/format-date-range'
 
 interface Experience {
+  id: string
   title: string
   company: string
   url?: string
   date: string
   description: string
-  technologies: string[]
+  technologies: readonly string[]
 }
-
-const experiences: Experience[] = [
-  {
-    title: 'Full-Stack Engineer',
-    company: 'Cybereason',
-    url: 'https://www.cybereason.com/',
-    date: '2025 — Present',
-    description:
-      'Build and maintain features and components for the core Next.js web portal. Designed and built an interactive Attack Path Graph visualization that processes and renders complex security event data from ClickHouse, PostgreSQL, and Redpanda. Added unit and E2E tests and introduced ESLint configs with CI lint checks, reducing release overhead and production regressions.',
-    technologies: ['TypeScript', 'Next.js', 'ClickHouse', 'PostgreSQL', 'Redpanda'],
-  },
-  {
-    title: 'Full-Stack Engineer',
-    company: 'Canbright',
-    url: 'https://canbright.co.jp',
-    date: '2021 — 2025',
-    description:
-      'Re-engineered core components and optimized full-stack performance across React, GraphQL, and REST architectures, cutting response times by 40% and supporting 56% client growth. Built a custom e-commerce solution tailored to client requirements on Next.js and Ruby on Rails, and led multiple releases through CI/CD pipelines.',
-    technologies: ['TypeScript', 'React', 'Next.js', 'Ruby on Rails', 'GraphQL', 'AWS'],
-  },
-  {
-    title: 'Android Developer Intern',
-    company: 'Smartech Brain Technologies',
-    date: '2020 — 2021',
-    description:
-      'Designed, built, and deployed 3 Android e-commerce applications, leveraging various Firebase products to enhance functionality and user experience.',
-    technologies: ['Java', 'Firebase'],
-  },
-]
 
 function ExperienceBody({ experience }: { experience: Experience }) {
   return (
@@ -58,7 +32,9 @@ function ExperienceBody({ experience }: { experience: Experience }) {
               )
             : null}
         </div>
-        <p className="text-sm leading-relaxed text-secondary/65">{experience.description}</p>
+        {experience.description
+          ? <p className="text-sm leading-relaxed text-secondary/65">{experience.description}</p>
+          : null}
         <ul className="mt-1 flex flex-wrap gap-2">
           {experience.technologies.map(technology => (
             <li
@@ -74,7 +50,17 @@ function ExperienceBody({ experience }: { experience: Experience }) {
   )
 }
 
-export const Experiences = () => {
+export const Experiences = async () => {
+  const experiences: Experience[] = (await getExperience()).map(({ slug, entry }) => ({
+    id: slug,
+    title: entry.designation,
+    company: entry.organizationName,
+    url: entry.organizationUrl ?? undefined,
+    date: formatDateRange(entry.startDate, entry.endDate, 'year'),
+    description: entry.description,
+    technologies: entry.technologies,
+  }))
+
   return (
     <section
       id="experience"
@@ -91,7 +77,7 @@ export const Experiences = () => {
           if (experience.url) {
             return (
               <Link
-                key={`${experience.company}-${experience.date}`}
+                key={experience.id}
                 href={experience.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -104,7 +90,7 @@ export const Experiences = () => {
 
           return (
             <div
-              key={`${experience.company}-${experience.date}`}
+              key={experience.id}
               className={className}
             >
               <ExperienceBody experience={experience} />

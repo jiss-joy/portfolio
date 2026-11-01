@@ -1,0 +1,18 @@
+organizationName: Canbright Co. Ltd.
+designation: Full-Stack Engineer
+startDate: 2021-11-11
+endDate: 2025-10-10
+organizationUrl: https://canbright.co.jp/
+description: >-
+  Re-engineered core components and optimized full-stack performance across
+  React, GraphQL, and REST architectures, cutting response times by 40% and
+  supporting 56% client growth. Built a custom e-commerce solution tailored to
+  client requirements on Next.js and Ruby on Rails, and led multiple releases
+  through CI/CD pipelines.
+technologies:
+  - TypeScript
+  - React
+  - Next.js
+  - Ruby on Rails
+  - GraphQL
+  - AWS

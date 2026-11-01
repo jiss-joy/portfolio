@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
+import { getProfile } from '@/lib/content'
 
-const RESUME_PATH = '/resume.pdf'
-
-export const PersonalCard = () => {
+export const PersonalCard = async () => {
+  const profile = await getProfile()
+  const { name, designation, description, email, address, resume } = profile
   return (
     <section
       id="about"
@@ -14,7 +15,7 @@ export const PersonalCard = () => {
         <div className="relative size-36 overflow-hidden rounded-full ring-2 ring-primary/30 ring-offset-4 ring-offset-background sm:size-40">
           <Image
             src="/photo-sakura.jpg"
-            alt="Jiss Joy"
+            alt={name}
             fill
             quality={90}
             sizes="160px"
@@ -23,28 +24,25 @@ export const PersonalCard = () => {
           />
         </div>
         <div className="text-center">
-          <p className="text-sm font-semibold tracking-wide text-secondary">Full-Stack Engineer</p>
-          <p className="mt-1 text-xs text-secondary/60">Tokyo, Japan</p>
+          <p className="text-sm font-semibold tracking-wide text-secondary">{designation}</p>
+          <p className="mt-1 text-xs text-secondary/60">{address}</p>
         </div>
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-4">
         <p className="text-sm leading-relaxed text-secondary/75">
-          With 5 years of experience, I focus on building beautiful applications with clean,
-          well-tested code — always with performance, scalability, and security in mind. Outside of
-          work you&apos;ll usually find me on a football pitch, behind the wheel, or somewhere near
-          the beach, and I cook and draw when I need a slower pace.
+          {description}
         </p>
 
         <div className="flex flex-col gap-2">
           <a
-            href="mailto:jissjoy1@gmail.com"
+            href={`mailto:${email}`}
             className="w-fit text-sm font-medium text-primary transition-colors hover:text-accent-hover"
           >
-            jissjoy1@gmail.com
+            {email}
           </a>
           <Link
-            href={RESUME_PATH}
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex w-fit items-center gap-1.5 text-sm font-medium text-secondary/70 transition-colors hover:text-primary"

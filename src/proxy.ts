@@ -2,17 +2,27 @@ import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 import { DEFAULT_VERSION, isSiteVersion, VERSIONS } from '@/config/site-versions'
 
+/**
+ * Top-level routes served as-is, never version-rewritten (matches the route and everything under it).
+ * - api: App Router API routes
+ * - keystatic: Keystatic admin UI
+ */
+const UNVERSIONED_ROUTES = ['api', 'keystatic']
+
+function isUnderRoute(pathname: string, route: string) {
+  return pathname === `/${route}` || pathname.startsWith(`/${route}/`)
+}
+
 export function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const { pathname } = request.nextUrl
 
-  // App Router API routes live at /api/* — do not version-rewrite them.
-  if (pathname === '/api' || pathname.startsWith('/api/')) {
+  if (UNVERSIONED_ROUTES.some(route => isUnderRoute(pathname, route))) {
     return NextResponse.next()
   }
 
   // Already under /v1|/v2|... — leave alone (draft preview on apex via /v2)
-  if (VERSIONS.some(version => pathname === `/${version}` || pathname.startsWith(`/${version}/`))) {
+  if (VERSIONS.some(version => isUnderRoute(pathname, version))) {
     return NextResponse.next()
   }
 

@@ -1,0 +1,17 @@
+organizationName: Cybereason, a LevelBlue company
+designation: Full-Stack Engineer
+startDate: 2025-10-16
+organizationUrl: https://www.levelblue.com/
+description: >-
+  Build and maintain features and components for the core Next.js web portal.
+  Designed and built an interactive Attack Path Graph visualization that
+  processes and renders complex security event data from ClickHouse, PostgreSQL,
+  and Redpanda. Added unit and E2E tests and introduced ESLint configs with CI
+  lint checks, reducing release overhead and production regressions.
+technologies:
+  - TypeScript
+  - React
+  - Next.js
+  - ClickHouse
+  - PostgreSQL
+  - Redpanda

@@ -1,0 +1,51 @@
+languages:
+  - name: TypeScript
+    icon: typescript
+  - name: JavaScript
+    icon: javascript
+  - name: Ruby
+    icon: ruby
+  - name: Go
+    icon: go
+  - name: Python
+    icon: python
+frameworks:
+  - name: React
+    icon: react
+  - name: Next.js
+    icon: nextjs
+  - name: Ruby on Rails
+    icon: rails
+  - name: Flutter
+    icon: flutter
+  - name: Django
+    icon: django
+  - name: NestJS
+    icon: nestjs
+  - name: GraphQL
+    icon: graphql
+  - name: Android
+    icon: android
+tools:
+  - name: Figma
+    icon: figma
+  - name: MySQL
+    icon: mysql
+  - name: PostgreSQL
+    icon: postgresql
+  - name: Tailwind CSS
+    icon: tailwind
+  - name: Docker
+    icon: docker
+  - name: AWS
+    icon: aws
+  - name: Redis
+    icon: redis
+  - name: ClickHouse
+    icon: clickhouse
+  - name: Jest
+    icon: jest
+  - name: Sentry
+    icon: sentry
+  - name: Prisma
+    icon: prisma

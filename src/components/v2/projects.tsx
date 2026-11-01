@@ -2,70 +2,24 @@ import type { LucideIcon } from 'lucide-react'
 import { Gauge, Spade, Webhook } from 'lucide-react'
 import Link from 'next/link'
 import { HiArrowUpRight } from 'react-icons/hi2'
+import { getProjects } from '@/lib/content'
 
 interface Project {
+  id: string
   title: string
   year: string
   description: string
-  technologies: string[]
+  technologies: readonly string[]
   url?: string
   icon?: LucideIcon
 }
 
-const projects: Project[] = [
-  {
-    title: 'Sector One',
-    year: '2026',
-    description:
-      'A local Assetto Corsa overlay: Go handles UDP ingest, record/replay, and SSE; an embedded Next.js dash paints RPM, tyres, and laps from a ring buffer — nothing leaves the machine.',
-    technologies: ['Go', 'Next.js', 'SSE'],
-    icon: Gauge,
-  },
-  {
-    title: 'AegisFlow',
-    year: '2026',
-    description:
-      'A multi-tenant webhook delivery platform: a Go API ingests events, queues them in Redis, and delivers to registered endpoints with HMAC signing and automatic retries, plus a Next.js dashboard to inspect every attempt.',
-    technologies: ['Go', 'Next.js', 'Redis'],
-    icon: Webhook,
-  },
-  {
-    title: 'Planning Ninja',
-    year: '2025 — Present',
-    description:
-      'A real-time Scrum planning-poker app: teams estimate story points together live over WebSockets, backed by a NestJS API and PostgreSQL behind a Next.js frontend.',
-    technologies: ['Next.js', 'NestJS', 'WebSockets', 'PostgreSQL'],
-    icon: Spade,
-  },
-  {
-    title: '便利予約 (Benri Yoyaku)',
-    year: '2024',
-    description:
-      'Developed a queue-based reservation management system to reduce wait times for customers at salons, clinics and restaurants using Next.js and other tools.',
-    technologies: ['Next.js', 'TypeScript'],
-  },
-  {
-    title: 'Medillah',
-    year: '2021',
-    description:
-      'Designed and built an android application where users can book appointments with doctors and get prescriptions online. Users can also buy over-the-counter drugs and have them delivered to their homes.',
-    technologies: ['Android', 'Firebase'],
-  },
-  {
-    title: 'Bio-mimicking Spider Robot',
-    year: '2021',
-    description:
-      'Led the development of a bio-mimicking, eight-legged spider robot for rough terrain navigation, focusing on the project\'s programming and control systems, with integrated surveillance capabilities.',
-    technologies: ['C++', 'Robotics'],
-  },
-  {
-    title: 'BConnect',
-    year: '2020',
-    description:
-      'An intra-university forum and discussion platform for students to ask and answer questions, and engage in discussions across various categories and topics. Students can chat with each other and share resources.',
-    technologies: ['Flutter', 'Firebase'],
-  },
-]
+// Keyed by the project's Keystatic slug. Projects without an entry render without an icon.
+const icons: Partial<Record<string, LucideIcon>> = {
+  'sector-one': Gauge,
+  'aegis-flow': Webhook,
+  'planning-ninja': Spade,
+}
 
 function ProjectBody({ project }: { project: Project }) {
   const Icon = project.icon
@@ -110,7 +64,21 @@ function ProjectBody({ project }: { project: Project }) {
   )
 }
 
-export const Projects = () => {
+export const Projects = async () => {
+  const projects: Project[] = (await getProjects()).map(({ slug, entry }) => {
+    const startYear = entry.startDate.slice(0, 4)
+
+    return {
+      id: slug,
+      title: entry.title,
+      year: entry.ongoing ? `${startYear} — Present` : startYear,
+      description: entry.description,
+      technologies: entry.technologies,
+      url: entry.liveUrl ?? entry.githubUrl ?? undefined,
+      icon: icons[slug],
+    }
+  })
+
   return (
     <section
       id="projects"
@@ -127,7 +95,7 @@ export const Projects = () => {
           if (project.url) {
             return (
               <Link
-                key={project.title}
+                key={project.id}
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -140,7 +108,7 @@ export const Projects = () => {
 
           return (
             <div
-              key={project.title}
+              key={project.id}
               className={className}
             >
               <ProjectBody project={project} />

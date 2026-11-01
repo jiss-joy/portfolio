@@ -1,5 +1,4 @@
 import Contact from '@/components/v1/contact'
-
 import DownloadCVButton from '@/components/v1/download-cv-button'
 import ExperienceEducationTimeline from '@/components/v1/experience-education-timeline'
 import Photo from '@/components/v1/photo'
@@ -7,8 +6,11 @@ import Projects from '@/components/v1/projects'
 import RolesTypingText from '@/components/v1/roles-typing-text'
 import Skills from '@/components/v1/skills'
 import SNSButtons from '@/components/v1/sns-buttons'
+import { getProfile } from '@/lib/content'
 
-export default function Home() {
+export default async function Home() {
+  const { name, description, linkedinUrl, githubUrl } = await getProfile()
+
   return (
     <section className="h-full">
       <div className="container h-full items-center justify-center px-4 md:px-8 lg:mx-auto lg:px-0">
@@ -19,18 +21,17 @@ export default function Home() {
           >
             <div className="text-sm text-gray-500">Hi, I&apos;m</div>
             <h2 className="h2 mb-6">
-              <span className="font-(montserrat) text-primary">Jiss Joy</span>
+              <span className="font-(montserrat) text-primary">{name}</span>
             </h2>
             <RolesTypingText />
             <p className="mb-9 mt-5 max-w-[500px] text-lg">
-              Committed to building beautiful applications and writing clean, well-tested code
-              focused on performance, scalability, and security.
+              {description}
             </p>
             {/* Resume and SNS */}
             <div className="flex flex-col items-center justify-center gap-8 lg:flex-row">
               <DownloadCVButton />
               <div className="mb-8 lg:mb-0">
-                <SNSButtons />
+                <SNSButtons linkedinUrl={linkedinUrl} githubUrl={githubUrl} />
               </div>
             </div>
           </div>
