@@ -1,0 +1,46 @@
+name: Content PR
+# Keystatic saves edits to content/* branches (main is protected). This opens a PR into main for each one,
+# so the Vercel preview is one tap away and publishing is just a merge.
+on:
+  push:
+    branches:
+      - 'content/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+# Rapid saves on the same branch shouldn't race to open two PRs
+concurrency:
+  group: content-pr-${{ github.ref }}
+
+jobs:
+  open-pr:
+    name: Open PR into main
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Open PR if none is open
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          # Keystatic creates the branch (a push with no new commits) before committing to it; skip that push
+          ahead_by=$(gh api "repos/$GH_REPO/compare/main...$BRANCH" --jq '.ahead_by')
+          if [ "$ahead_by" = "0" ]; then
+            echo "$BRANCH has no commits ahead of main yet"
+            exit 0
+          fi
+
+          if [ -n "$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[].number')" ]; then
+            echo "A PR is already open for $BRANCH"
+            exit 0
+          fi
+
+          gh pr create \
+            --head "$BRANCH" \
+            --base main \
+            --title "Content: ${BRANCH#content/}" \
+            --body "Edits made in Keystatic on \`$BRANCH\`. Check the Vercel preview, then merge to publish. Further saves on this branch update this PR."
