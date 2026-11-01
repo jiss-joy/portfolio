@@ -1,23 +1,20 @@
-'use client'
+import ProjectCard from '@/components/v1/project-card'
+import { getProjects } from '@/lib/content'
 
-import AegisFlowProjectCard from '@/components/v1/aegis-flow-project-card'
-import BenriYoyakuProjectCard from '@/components/v1/benri-yoyaku-project-card'
-import ForumsAppProjectCard from '@/components/v1/forums-app-project-card'
-import MedillaProjectCard from '@/components/v1/medilla-project-card'
-import PlanningNinjaProjectCard from '@/components/v1/planning-ninja-project-card'
-import RobotSpiderProjectCard from '@/components/v1/robot-spider-project-card'
-import SectorOneProjectCard from '@/components/v1/sector-one-project-card'
+const Projects = async () => {
+  const projects = await getProjects()
 
-const Projects = () => {
   return (
     <div className="grid gap-4 px-4 lg:grid-cols-2">
-      <SectorOneProjectCard />
-      <AegisFlowProjectCard />
-      <PlanningNinjaProjectCard />
-      <BenriYoyakuProjectCard />
-      <MedillaProjectCard />
-      <RobotSpiderProjectCard />
-      <ForumsAppProjectCard />
+      {projects.map(({ slug, entry }) => (
+        <ProjectCard
+          key={slug}
+          slug={slug}
+          title={entry.title}
+          year={entry.startDate.slice(0, 4)}
+          description={entry.description}
+        />
+      ))}
     </div>
   )
 }

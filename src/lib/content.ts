@@ -1,8 +1,8 @@
-'server-only'
-
 import { createReader } from '@keystatic/core/reader'
+
 import { cache } from 'react'
 import keystaticConfig from '../../keystatic.config'
+import 'server-only'
 
 const reader = createReader(process.cwd(), keystaticConfig)
 
@@ -23,5 +23,10 @@ export const getExperience = cache(async () => {
 
 export const getEducation = cache(async () => {
   const entries = await reader.collections.education.all()
+  return entries.sort(byStartDateDesc)
+})
+
+export const getProjects = cache(async () => {
+  const entries = await reader.collections.projects.all()
   return entries.sort(byStartDateDesc)
 })
